@@ -1,46 +1,37 @@
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
-import slidestyle from '../homestyles/slide.module.css'
+import slidestyle from './slideshow.module.css'
 
 const slideImages = [
-  "https://cdn.shopify.com/s/files/1/0449/5225/6667/files/Date-launch-post-whatsapp-banner-desktop.jpg?v=1654259038",
-  "https://cdn.shopify.com/s/files/1/0449/5225/6667/files/Indian-plum-and-peach-banner.jpg?v=1653914762",
-  "https://cdn.shopify.com/s/files/1/0449/5225/6667/files/Tarty-Sweetness-banner.jpg?v=1653914749",
-  "https://cdn.shopify.com/s/files/1/0449/5225/6667/files/Delhi-launch-banner.jpg?v=1649917692",
-  "https://cdn.shopify.com/s/files/1/0449/5225/6667/files/kiwi_bannerArtboard_1.jpg?v=1650952002"
+ "https://www.bigbasket.com/media/uploads/banner_images/L1-YXNP4834-1200X300-01stSEP22.jpg",
+ "https://www.bigbasket.com/media/uploads/banner_images/L1-YXNP3507-1200X300-22ndJul22.jpg",
+ "https://www.bigbasket.com/media/uploads/banner_images/L1-YXNP3540-1200X300-20thJun22.jpg",
+ "https://www.bigbasket.com/media/uploads/banner_images/L1-YXNP3469-1200X300-16thJun22.jpg",
+ "https://www.bigbasket.com/media/uploads/banner_images/YXNP5333-1200x300-070922.jpg",
+ "https://www.bigbasket.com/media/uploads/banner_images/fresho-fnv-Bangalore-1200x300-27thSEP22.jpeg",
+ "https://www.bigbasket.com/media/uploads/banner_images/YXNP5712_1200x300_150922.jpg",
+ "https://www.bigbasket.com/media/uploads/banner_images/L1-YXNP4836-1200X300-01stSEP22.jpg"
 ];
 
 const properties={ 
-
-
   indicators: true,
 };
 
-// const slidestyle={
-
-//     display: "flex",
-//     alignItems: "center",
-//     justifyContent: "center",
-//     backgroundSize: "cover",
-//     height: "350px"
-// }
 
 const Slideshow = () => {
     return (
       <div className={slidestyle.top}>
         <Slide easing="ease"  {...properties}>
           {slideImages.map((el)=>
-          {
+          (
             <div className={slidestyle.each}>
             <div style={{'backgroundImage': `url(${el})`}}>
            
             </div>
           </div>
-          })}
-            {/******************************************* */ }
-         
-          
+          ))}
+            
           
         </Slide>
       </div>
