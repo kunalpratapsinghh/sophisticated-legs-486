@@ -1,8 +1,15 @@
 import React from 'react'
+import {
+  ViewportBottomSlider,
+  SliderBanner,
+} from "../../component/Homepage/SliderBanner";
 
 const Homepage = () => {
   return (
-    <div>Homepage</div>
+    <>
+      <SliderBanner />
+      <ViewportBottomSlider />
+    </>
   )
 }
 
