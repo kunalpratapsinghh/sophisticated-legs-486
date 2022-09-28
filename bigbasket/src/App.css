@@ -36,3 +36,96 @@
     transform: rotate(360deg);
   }
 }
+/* Universal styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  background-color: black;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.App {
+  width: 100%;
+  background-color: #fff;
+}
+.App > div {
+  max-width: 1350px;
+  margin: auto;
+  background-color: #fff;
+}
+
+.show {
+  display: flex;
+}
+.hide {
+  display: none;
+}
+
+/* scrolling active */
+.nav-sticky.scrolling-active {
+  position: sticky;
+  top: 0;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 3px 0 rgb(0 0 0 / 10%);
+  border: 0 0 1px;
+}
+
+.shop-on-scroll {
+  display: none;
+}
+.scrolling-active .shop-on-scroll {
+  display: flex;
+}
+
+@media screen and (min-width: 870px) {
+  .scrolling-active > div > div:nth-child(1) > div {
+    align-items: center;
+  }
+  .nav-sticky.scrolling-active .big-basket-logo {
+    position: relative;
+    top: -3px;
+  }
+  .nav-sticky.scrolling-active .big-basket-logo i {
+    width: 45px;
+    height: 45px;
+    margin: 0 0 0 0;
+    display: inline-block;
+    background-image: url(https://www.bbassets.com/static/v2530/custPage/build/content/img/bb-icon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .nav-sticky.scrolling-active .search-bar {
+    bottom: 20px;
+  }
+  div.empty-divs {
+    display: none;
+  }
+  .scrolling-active div.basket {
+    bottom: 2.5px;
+  }
+  .scrolling-active div ul.nav-top {
+    display: none;
+  }
+  .scrolling-active section.nav-category {
+    border: none;
+    display: none;
+  }
+}
