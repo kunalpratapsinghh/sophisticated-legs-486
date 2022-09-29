@@ -1,4 +1,5 @@
 import './App.css';
+import { Footer } from './component/Footer';
 import { Topnavbar } from './component/Topnavbar';
 // import {useSelector } from "react-redux";
 // import{Box,Heading} from "@chakra-ui/react"
@@ -7,8 +8,9 @@ function App() {
   // const {name}= useSelector((state) => state.reducer1);
   return (
     <div className="App">
-     <Router />
+     ?<Router />
      {/* <Topnavbar/> */}
+     {/* <Footer/> */}
     </div>
   );
 }
