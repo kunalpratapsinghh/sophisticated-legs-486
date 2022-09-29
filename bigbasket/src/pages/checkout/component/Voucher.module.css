@@ -1,0 +1,105 @@
+.voucher {
+    background-color: #f7f7f7;
+  
+    padding: 10px;
+  }
+  
+  .vouchersAvailable {
+    background-color: #e8f1fc;
+    display: flex;
+    height: 30px;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .boldText {
+    font-weight: 500;
+    color: grey;
+    margin-bottom: 10px;
+  }
+  .order {
+    background-color: #f7f7f7;
+  
+    padding: 10px;
+  }
+  
+  .valueCharge {
+    background-color: white;
+    border: 1px solid grey;
+    font-size: 14px;
+    padding-left: 10px;
+    /* height: 70px; */
+    align-items: center;
+  }
+  
+  .amountPayable {
+    border: 1px solid grey;
+    /* height: 85px; */
+    padding-left: 10px;
+    font-size: 14px;
+    background-color: white;
+  }
+  
+  .circle1 {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    -moz-border-radius: 7.5px;
+    -webkit-border-radius: 7.5px;
+    border-radius: 7.5px;
+    background-color: #f7f7f7;
+    position: absolute;
+  
+    box-shadow: 1px 0 1px rgb(25 115 231 / 50%);
+  }
+  
+  .circle2 {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    -moz-border-radius: 7.5px;
+    -webkit-border-radius: 7.5px;
+    border-radius: 7.5px;
+    background-color: #f7f7f7;
+    position: absolute;
+    margin-left: 218px;
+    box-shadow: -1px 0 1px rgb(25 115 231 / 50%);
+  }
+  
+  .inputButton {
+    background-color: #f7f7f7;
+    border: 1px solid grey;
+    /* padding: 10px; */
+    height: 30px;
+  }
+  
+  .voucherInput {
+    height: 90%;
+    border: none;
+    outline: none;
+  }
+  
+  .button {
+    height: 100%;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    border-left: grey 1px solid;
+    cursor: pointer;
+  }
+  
+  .totlaSaving {
+    color: #84c23d;
+    background-color: #edf6df;
+    width: 98%;
+    margin-bottom: 5px;
+    height: 30px;
+  }
+  
+  .saving {
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
