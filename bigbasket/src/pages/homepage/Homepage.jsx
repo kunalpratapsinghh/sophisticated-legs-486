@@ -1,6 +1,7 @@
 import React from 'react'
+import { HomepageMainBody } from '../../component/Homepage/bankOffer';
 import {
-  ViewportBottomSlider,
+  BottomSlider,
   SliderBanner,
 } from "../../component/Homepage/SliderBanner";
 
@@ -8,7 +9,8 @@ const Homepage = () => {
   return (
     <>
       <SliderBanner />
-      <ViewportBottomSlider />
+      <BottomSlider />
+      <HomepageMainBody/>
     </>
   )
 }
