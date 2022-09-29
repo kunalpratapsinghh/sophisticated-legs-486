@@ -1,0 +1,46 @@
+.Solidbutton {
+    background: #84c225;
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 5px 20px 5px 2px;
+    margin: 5px 10px 5px 0;
+  }
+  .outlinebutton {
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 8px 20px 8px 5px;
+    margin: 5px 0px 5px 0px;
+  }
+  .outlinebutton:hover {
+    background: #84c225;
+    color: white;
+  }
+  .borderright {
+    border-right: 1px solid rgb(156, 155, 155);
+    font-size: 12px;
+    margin-right: 1rem;
+    width:210px;
+    /* padding-right: 2rem; */
+  }
+  .borderleft {
+    border-left: 1px solid rgb(156, 155, 155);
+  }
+  .menuItem > MenuItem {
+    border-bottom: 1px solid black;
+  }
+  .marginright {
+    margin-right: 1rem;
+  }
+  .bg_grey {
+    background-color: #e8e8e8;
+    border-right: 1px solid grey;
+    width:210px;
+    margin-left: -1rem;
+    font-size: 12px;
+  }
+  .fs12{
+    font-weight: 300;
+    font-size: 12px;
+  }

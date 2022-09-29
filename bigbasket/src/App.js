@@ -1,4 +1,5 @@
 import './App.css';
+import { Topnavbar } from './component/Topnavbar';
 // import {useSelector } from "react-redux";
 // import{Box,Heading} from "@chakra-ui/react"
 import Router from './pages/Allroutes';
@@ -7,6 +8,7 @@ function App() {
   return (
     <div className="App">
      <Router />
+     {/* <Topnavbar/> */}
     </div>
   );
 }
