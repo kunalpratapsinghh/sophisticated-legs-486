@@ -9,5 +9,9 @@ router.get("/",(req,res)=>{
     res.send("Hello")
 })
 
+router.get("/checkout",(req,res)=>{
+    res.send("Hello")
+})
+
 
 module.exports = router;

@@ -17,6 +17,8 @@ import {
 import Address from "./component/Address";
 import Giftorder from "./component/GiftOrder";
 import DeliveryOption from "./component/DeliveryOption";
+import Payment from "./component/Payment";
+import Voucher from "./component/Voucher";
 const Checkout = () => {
   return (
     <Box>
@@ -48,8 +50,11 @@ const Checkout = () => {
           <Address />
           <Giftorder />
           <DeliveryOption/>
+          <Payment/>
         </GridItem>
-        <GridItem h="10" bg="tomato"></GridItem>
+        <GridItem h="10">
+          <Voucher/>
+        </GridItem>
       </Grid>
     </Box>
   );
