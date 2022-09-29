@@ -7,8 +7,9 @@ function App() {
   // const {name}= useSelector((state) => state.reducer1);
   return (
     <div className="App">
+      <Topnavbar/>
      <Router />
-     {/* <Topnavbar/> */}
+     
     </div>
   );
 }

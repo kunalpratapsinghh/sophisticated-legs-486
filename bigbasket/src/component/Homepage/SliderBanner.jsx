@@ -85,7 +85,7 @@ export class SliderBanner extends Component {
   }
 }
 
-export class ViewportBottomSlider extends Component {
+export class BottomSlider extends Component {
   render() {
     var settings = {
       dots: false,
