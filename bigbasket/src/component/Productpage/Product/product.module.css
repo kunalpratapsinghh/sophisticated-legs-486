@@ -1,0 +1,9 @@
+.asterIcon{
+    display: block;
+    width: 18px;
+    height: 22px;
+    float: right;
+    background-image: url(https://www.bbassets.com/static/v2590/custPage/build/content/img/product-deck-sprite.png);
+    background-repeat: no-repeat;
+    background-position: -24px -24px;
+}

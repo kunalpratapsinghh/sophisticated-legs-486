@@ -9,7 +9,16 @@ import {
   VStack,
   Grid,
   GridItem,
+  Button,
+  ScaleFade,
+  useDisclosure,
+  HStack,
 } from "@chakra-ui/react";
+import Address from "./component/Address";
+import Giftorder from "./component/GiftOrder";
+import DeliveryOption from "./component/DeliveryOption";
+import Payment from "./component/Payment";
+import Voucher from "./component/Voucher";
 const Checkout = () => {
   return (
     <Box>
@@ -32,9 +41,20 @@ const Checkout = () => {
         <Spacer />
       </VStack>
       {/*---------------------------------------Delivery Section-------------------------------------------------- */}
-      <Grid templateColumns={['repeat(1, 1fr)','repeat(2, 1fr)']}gap="10px">
-        <GridItem h='10' bg='tomato' w="70%"></GridItem>
-        <GridItem  h='10' bg='tomato' ColSpan={1}></GridItem>
+      <Grid
+        templateColumns={["1fr", "1fr", "2fr 1fr"]}
+        gap="10px"
+        padding={["5px 10px", "5px 15px", "5px 20px", "10px 200px"]}
+      >
+        <GridItem>
+          <Address />
+          <Giftorder />
+          <DeliveryOption/>
+          <Payment/>
+        </GridItem>
+        <GridItem h="10">
+          <Voucher/>
+        </GridItem>
       </Grid>
     </Box>
   );
