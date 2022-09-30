@@ -1,7 +1,7 @@
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
-import slidestyle from './slideshow.module.css'
+// import slidestyle from './slideshow.module.css'
 
 const slideImages = [
  "https://www.bigbasket.com/media/uploads/banner_images/L1-YXNP4834-1200X300-01stSEP22.jpg",
@@ -21,6 +21,8 @@ const properties={
 
 const Slideshow = () => {
     return (
+      
+      
       <div className={slidestyle.top}>
         <Slide easing="ease"  {...properties}>
           {slideImages.map((el)=>
@@ -33,8 +35,8 @@ const Slideshow = () => {
           ))}
             
           
-        </Slide>
-      </div>
+      //   </Slide>
+      // </div>
     )
 };
 
