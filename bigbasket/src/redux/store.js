@@ -5,6 +5,6 @@ import {reducer} from "./reducer"
 
 const rootreducer=combineReducers({
     reducer1:reducer,
-    productReducer:productReducer,
+    product:productReducer,
 })
 export const store =legacy_createStore(rootreducer,applyMiddleware(thunk))
