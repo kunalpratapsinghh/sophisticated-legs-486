@@ -258,7 +258,7 @@ export const SliderDown = styled.div`
   border-width: 0 1px 1px 0;
   transform: rotate(45deg);
   transition: all 0.2s ease-out;
-`;
+`
 
 
 
