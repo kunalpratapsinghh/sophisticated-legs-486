@@ -1,0 +1,74 @@
+.Container {
+    width: 100%;
+    padding-top: 100px;
+    background-color: rgb(246,247,248);
+    padding-bottom: 200px;
+}
+.signupContainer {
+    width: 60%;
+    margin: auto;
+    border: 1px solid rgb(208,214,219);
+    display: flex;
+    border-radius: 5px;
+}
+.signupContainer_1 {
+    width: 50%;
+    border: 1px solid none;
+    padding-top: 3%;
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-bottom: 20px;
+    background-color: white;
+}
+.signupContainer_2 {
+    width: 50%;
+    border: 1px solid none;
+    background-color: rgb(242,245,252);
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.loginContainer_2 > p {
+    text-align: center;
+    font-size: 20px;
+    padding-top: 7px;
+    padding-bottom: 20px;
+}
+.signupContainer_2 > img {
+    margin: auto;
+    padding-top: 50px;
+}
+/* Text Line center */
+
+.lineText > p {
+    display: flex;
+    flex-direction: row;
+    color: rgb(161, 159, 159);
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+  .lineText > p:before, .lineText > p:after{
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid;
+    margin: auto;
+  }
+  .lineText > p:before {
+    margin-right: 10px
+  }
+  .lineText > p:after {
+    margin-left: 10px
+  }
+
+  /* Bottom */
+
+  .bottomSlide {
+    font-size: 12px;
+    padding-top: 5px;
+    justify-content: center;
+    display: flex;
+    padding-top: 10px;
+ }
+ .bottomSlide > a {
+    color: blue;
+    margin-left: 5px;
+ }
