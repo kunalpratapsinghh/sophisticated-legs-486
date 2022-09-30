@@ -24,7 +24,7 @@ strikedprice:101.30,price:75.50,delivery_date:"Standard Delivery: Tomorrow",deli
   ]
   return (
     <>
-    <Flex justifyContent={"space-between"}><Text fontSize={"24px"} color={"#58595b"}>Fruits & Vegetables (620)</Text>
+    <Flex justifyContent={"space-between"} ><Text fontSize={"24px"} color={"#58595b"}>Fruits & Vegetables (620)</Text>
     <Select w={"13rem"} h={"1.4rem"} fontSize={"13px"} p={0} borderRadius={"none"} border={"1px solid black"}>
       <option>Popularity</option>
       <option></option>
@@ -35,12 +35,16 @@ strikedprice:101.30,price:75.50,delivery_date:"Standard Delivery: Tomorrow",deli
 
     </Select>
     </Flex>
-   
-    <Grid templateColumns={"repeat(4,3fr)"} gap={"1rem"}>
+    <Flex mt={"1rem"} gap={"6px"} >
+    <Image src="https://www.bbassets.com/static/v2590/custPage/build/content/img/standard-del.svg" w={"1.4rem"} />
+    <Text fontSize={"10px"}> ALL PRODUCTS</Text>
+    </Flex>
+   <Box mt={"1rem"} borderBottom={"1px solid #dfdfdf"} ></Box>
+    <Grid templateColumns={"repeat(4,3fr)"} mt={"1rem"} >
 
     {products.map((el)=>
     (
-        <Flex direction={"column"} width={"200px"} _hover={{boxShadow:'lg',  bg:'white'}} p={2} textAlign="start">
+        <Flex direction={"column"} width={"200px"} p={2} borderRight={"1px solid #dfdfdf"} _hover={{boxShadow:'2xl',  bg:'white'}} textAlign="start" margin={"auto"}>
             {/* <Box boxShadow='md' p='6' rounded='md' bg='white'> */}
             <Flex  direction={"row-reverse"} boxShadow='md' p={2}   bg='white' h={6} >
             <Box className={styles.asterIcon} mt={"-5px"}></Box>
@@ -70,7 +74,8 @@ strikedprice:101.30,price:75.50,delivery_date:"Standard Delivery: Tomorrow",deli
           </Flex>
           <Flex h={"1.2rem"} gap={"5px"}><Flex><Text fontSize={"10px"} border={"1px solid #e0e0e0"} w={6} color={"#999999"} fontWeight={400}>Qty</Text>
           <Text value={1} h={"1.2rem"} w={"3rem"} border={"1px solid #e0e0e0"} bgColor={"white"}></Text></Flex>
-          <Flex><Button h={"1.2rem"} fontSize={"13px"} bgColor={"#f7d779"}>ADD</Button></Flex>
+          <Flex><Button h={"1.2rem"} fontSize={"13px"} bgColor={"#f7d779"} borderRadius={"none"}>ADD<Box className={styles.bsktIcon}></Box></Button>
+          </Flex>
           </Flex>
           </Flex>
         </Flex>

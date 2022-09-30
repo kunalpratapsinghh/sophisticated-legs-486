@@ -7,3 +7,14 @@
     background-repeat: no-repeat;
     background-position: -24px -24px;
 }
+
+.bsktIcon {
+        background-image: url(https://www.bbassets.com/static/v2590/custPage/build/content/img/product-deck-sprite.png);
+        background-repeat: no-repeat;
+        background-position: -5px -5px;
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        vertical-align: bottom;
+        margin-top:5px;
+}
