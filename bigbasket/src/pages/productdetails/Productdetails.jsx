@@ -2,27 +2,25 @@ import { Box, Container, Flex, Text, Image, Checkbox, Grid, Input } from '@chakr
 import Product from '../../component/Productpage/Product/Product'
 import Slideshow from '../../component/Productpage/Slideshow/Slideshow'
 import React, { useEffect, useState} from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { addtoCart, fetchData, getSingleProduct } from '../../redux/product/product.action';
+import { useDispatch } from 'react-redux';
+import { addtoCart, fetchData} from '../../redux/product/product.action';
 
 const Productdetails = () => {
   const dispatch=useDispatch();
-  const[toggle,setToggle]=useState(false);
-  const {getFruits}=useSelector((state)=>state.product)
+  
   useEffect(()=>
   {
       dispatch(fetchData());
-
-  },[toggle])
+  },[])
 
   
   return (
-    <Container maxW={"90%"} margin={"auto"}>
+    <Container maxW={"100%"} margin={"auto"}>
    <Slideshow/>
-   <Image src="https://www.bigbasket.com/media/uploads/flatpages/test-1/Fruits%20&%20vegetables.jpg"/>
-   <Flex align={"flex-start"} gap={"1rem"} marginTop={"1rem"}>
+   <Image width={"90%"} margin={"auto"} src="https://www.bigbasket.com/media/uploads/flatpages/test-1/Fruits%20&%20vegetables.jpg"/>
+   <Flex gap={"1rem"} width={"90%"} margin={"auto"} marginTop={"1rem"} >
     <Box height={"400px"}>
-    <Flex direction={"column"} borderRight={"1px solid #dfdfdf"} width={"13rem"} textAlign="start" gap={1} >
+    <Flex direction={"column"} pl={"1rem"} borderRight={"1px solid #dfdfdf"} width={"13rem"} textAlign="start" gap={1} >
     <Text fontSize="14px">Category</Text>
     <Box borderBottom={"1px solid #dfdfdf"} width="95%"></Box>
     <Text color={"#62a154 "} fontSize="13px">Fruits & Vegetables</Text>
@@ -68,6 +66,16 @@ const Productdetails = () => {
       <Checkbox><Text fontSize={"14px"}> Chile</Text></Checkbox>
       </Flex>
 
+
+      <Text fontSize="14px">Price</Text>
+    <Box borderBottom={"1px solid #dfdfdf"} width="95%"></Box>
+    <Flex direction={"column"} p={0} gap={0} fontFamily={"ProximaNovaA-Regular"} color={"#898989"} lineHeight={"4px"}>
+      <Checkbox><Text fontSize={"14px"}>Less than Rs 20 (67)</Text></Checkbox>
+      <Checkbox><Text fontSize={"14px"}>Rs 21 to Rs 50 (216)</Text></Checkbox>
+      <Checkbox><Text fontSize={"14px"}>Rs 51 to Rs 100 (155)</Text></Checkbox>
+      <Checkbox><Text fontSize={"14px"}>Rs 101 to Rs 200 (94) </Text></Checkbox>
+      <Checkbox><Text fontSize={"14px"}>Rs 201 to Rs 500 (38)</Text></Checkbox>
+      </Flex>
     </Flex>
     </Box>
 
