@@ -5,8 +5,11 @@ import {
   FormLabel,
   Input,
   Text,
-  Button
+  Button,
+  Box
 } from '@chakra-ui/react'
+import GLogin from './glogin';
+import { GoogleLogout } from 'react-google-login';
 const axios = require('axios');
 
 const Signup = () => {
@@ -17,6 +20,10 @@ const Signup = () => {
     email:'',
     password:""
   })
+  const handlelogout=()=>{
+    localStorage.removeItem("username");
+    navigate("/")
+  }
 
   const handleChange = (e) => {
     // console.log(e.target)
@@ -101,9 +108,19 @@ const Signup = () => {
             </div>
 
             <div className={style.lineText}><p>or</p></div>
-            <Button padding={3} variant='outline' borderRadius={3} width='100%' size='xs' color='gray' marginBottom={4} colorScheme='gray'> <span><img width={15} src="https://w7.pngwing.com/pngs/249/19/png-transparent-google-logo-g-suite-google-guava-google-plus-company-text-logo.png" alt="google" /></span> <a href="https://www.google.com/">Log in the Google</a> </Button>
+            <Box padding={3} >
+              <GLogin />
+            </Box>
+            
+            {/* <Button padding={3} variant='outline' borderRadius={3} width='100%' size='xs' color='gray' marginBottom={4} colorScheme='gray'> <span><img width={15} src="https://w7.pngwing.com/pngs/249/19/png-transparent-google-logo-g-suite-google-guava-google-plus-company-text-logo.png" alt="google" /></span> <a href="https://www.google.com/">Log in the Google</a> </Button>
             <Button padding={3} variant='outline' borderRadius={3} width='100%' size='xs' color='gray' marginBottom={4} colorScheme='gray'> <span><img width={10} src="https://companieslogo.com/img/orig/MSFT-a203b22d.png?t=1633073277" alt="microsoft" /></span> <a href="https://www.microsoft.com/en-in/">Log in the Microsoft</a></Button>
-            <Button padding={3} variant='outline' borderRadius={3} width='100%' size='xs' color='gray' marginBottom={4} colorScheme='gray'> <span><img width={15} src="https://www.freepnglogos.com/uploads/apple-logo-png/apple-logo-png-dallas-shootings-don-add-are-speech-zones-used-4.png" alt="apple" /></span> <a href="https://www.apple.com/">Log in the Apple</a></Button>
+            <Button padding={3} variant='outline' borderRadius={3} width='100%' size='xs' color='gray' marginBottom={4} colorScheme='gray'> <span><img width={15} src="https://www.freepnglogos.com/uploads/apple-logo-png/apple-logo-png-dallas-shootings-don-add-are-speech-zones-used-4.png" alt="apple" /></span> <a href="https://www.apple.com/">Log in the Apple</a></Button> */}
+            <GoogleLogout
+                    clientId='487806808115-u4tnqobdjitv6csr2pom5tdrj5fb8383.apps.googleusercontent.com'
+                    buttonText="Sign Out"
+                    onLogoutSuccess={handlelogout}
+                >
+                </GoogleLogout>
             <hr />
             <div className={style.bottomSlide}>
               <Text color='black'>Already have an account?</Text><a href="/login">Log In</a>
