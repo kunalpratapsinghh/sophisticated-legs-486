@@ -8,9 +8,9 @@ function App() {
   // const {name}= useSelector((state) => state.reducer1);
   return (
     <div className="App">
-     ?<Router />
-     {/* <Topnavbar/> */}
-     {/* <Footer/> */}
+     <Topnavbar/>
+     <Router />
+    <Footer/>
     </div>
   );
 }
