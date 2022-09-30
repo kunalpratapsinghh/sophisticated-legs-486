@@ -1,10 +1,178 @@
 
 import { SliderDown } from "./Slider_config";
 import { FeatureSection } from "./Slider_config";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import AllProducts from "./AllProducts";
 
 
 export const HomepageMainBody = () => {
+  const [sellers, setSellers] = useState([]);
 
+  
+  useEffect(() => {
+    const dummy=[{
+      "_id": {
+        "$oid": "62419f54eef268a2af502d3d"
+      },
+      "name": "Mushrooms - Button",
+      "description": "Buttom mushrooms are very small sized mushrooms with smooth round caps and short stems. They have a mild flavour with a good texture that becomes more fragrant and meaty when cooked.",
+      "price": 40,
+      "mrp": 50,
+      "discount": 20,
+      "category": "fruits-vegetables",
+      "stock": 50,
+      "brand": "fresho",
+      "superSaver": true,
+      "quantityType": "kg",
+      "season": "winter",
+      "country": "india",
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1648467796152"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1648467796152"
+        }
+      },
+      "photo": [
+        "https://www.bigbasket.com/media/uploads/p/l/10000273_16-fresho-mushrooms-button.jpg",
+        "https://www.bigbasket.com/media/uploads/p/l/10000273-2_19-fresho-mushrooms-button.jpg",
+        "https://www.bigbasket.com/media/uploads/p/l/10000025-5_1-fresho-banana-robusta.jpg"
+      ]
+    },{
+      "_id": {
+        "$oid": "62419f93eef268a2af502d3f"
+      },
+      "name": "Fresho Lettuce - Iceberg",
+      "description": "Iceberg lettuce is a variety of lettuce with crisp leaves which grows in a spherical head resembling a cabbage. The leaves on the outside tend to be green and the leaves in the center go from pale yellow to nearly whitish as you move closer and closer to the center of the head with the sweetest leaves in the center of the head.",
+      "price": 44,
+      "mrp": 55,
+      "discount": 20,
+      "category": "fruits-vegetables",
+      "stock": 80,
+      "brand": "fresho",
+      "superSaver": false,
+      "quantityType": "kg",
+      "season": "summer",
+      "country": "america",
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1648467859098"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1648467859098"
+        }
+      },
+      "photo": [
+        "https://www.bigbasket.com/media/uploads/p/l/10000133_14-fresho-lettuce-iceberg.jpg",
+        "https://www.bigbasket.com/media/uploads/p/l/10000133-2_7-fresho-lettuce-iceberg.jpg",
+        "https://www.bigbasket.com/media/uploads/p/l/10000133-3_1-fresho-lettuce-iceberg.jpg"
+      ]
+    },{
+      "_id": {
+        "$oid": "6241a131eef268a2af502d47"
+      },
+      "name": "Aashirvaad Atta/Godihittu - Whole Wheat",
+      "description": "Aashirvaad whole wheat atta is made of zero per cent maida and 100% atta, which makes it extremely nutritious since its packed with health benefits. This also means more fluffy and soft rotis at home. Aashirvaad Atta is also made from the best grains - heavy on the palm, golden amber in colour and hard in bite. It is grounded using the chakki - grinding process for the perfect balance of colour, taste and nutrition.",
+      "price": 38.7,
+      "mrp": 49.9,
+      "discount": 22,
+      "category": "foodgrains-oil-masala",
+      "stock": 10000,
+      "brand": "aashirvaad",
+      "superSaver": true,
+      "quantityType": "kg",
+      "season": "winter",
+      "country": "india",
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1648468273972"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1648468273972"
+        }
+      },
+      "photo": [
+        "https://www.bigbasket.com/media/uploads/p/l/126906_7-aashirvaad-atta-whole-wheat.jpg",
+        "https://www.bigbasket.com/media/uploads/p/l/126906-2_7-aashirvaad-atta-whole-wheat.jpg",
+        "https://www.bigbasket.com/media/uploads/p/l/126906-4_7-aashirvaad-atta-whole-wheat.jpg"
+      ]
+    },{
+      "_id": {
+        "$oid": "62419fc6eef268a2af502d41"
+      },
+      "name": "Fresho Banana - Robusta",
+      "description": "Relish the soft, buttery texture of Robusta bananas that are light green and have a great fragrance and taste. The stalks of Robustas are thick and rigid. Fresh fruits are green, which revolve to a bright yellow on ripening and the flesh contains a white - ceramic colour.",
+      "price": 37.8,
+      "mrp": 47.25,
+      "discount": 20,
+      "category": "fruits-vegetables",
+      "stock": 1000,
+      "brand": "fresho",
+      "superSaver": true,
+      "quantityType": "kg",
+      "season": "winter",
+      "country": "india",
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1648467910317"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1648467910317"
+        }
+      },
+      "photo": [
+        "https://www.bigbasket.com/media/uploads/p/l/10000025_27-fresho-banana-robusta.jpg",
+        "https://www.bigbasket.com/media/uploads/p/l/10000025-2_3-fresho-banana-robusta.jpg",
+        "https://www.bigbasket.com/media/uploads/p/l/10000025-3_3-fresho-banana-robusta.jpg"
+      ]
+    },{
+      "_id": {
+        "$oid": "6241a01ceef268a2af502d43"
+      },
+      "name": "Baby Apple Shimla",
+      "description": "The apple flesh is greenish white and grained, and it tastes sweet and juicy. The crispiness and the aroma of the apples make it more attractive. Apples are best when it is consumed fresh after meals or as a healthy snack for kids.",
+      "price": 209,
+      "mrp": 261.25,
+      "discount": 20,
+      "category": "fruits-vegetables",
+      "stock": 100,
+      "brand": "fresho",
+      "superSaver": true,
+      "quantityType": "kg",
+      "season": "summer",
+      "country": "india",
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1648467996304"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1648467996304"
+        }
+      },
+      "photo": [
+        "https://www.bigbasket.com/media/uploads/p/l/40134281_11-fresho-baby-apple-shimla.jpg",
+        "https://www.bigbasket.com/media/uploads/p/l/40134281-2_1-fresho-baby-apple-shimla.jpg",
+        "https://www.bigbasket.com/media/uploads/p/l/40134281-3_1-fresho-baby-apple-shimla.jpg"
+      ]
+    }]
+    // axios.get(`/products/sellers`).then((data) => {
+    //   setSellers(data.data);
+    // });
+    setSellers(dummy);
+  }, []);
+  
 
   return (
     <FeatureSection>
@@ -21,7 +189,14 @@ export const HomepageMainBody = () => {
         img4="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/c8c0b982-8bbf-434f-aeac-cc9c07a7029a/325a886d-f7ba-4f20-a692-f41d8f8311b2/t1_hp_m_aff_dbs_360_260922.jpg"
       />
 
-      
+<h2>Best Sellers</h2>
+      <ul className="best-sellers">
+        {sellers.map((product,i) => (
+          <li className="best-seller-product" key={product._id}>
+            <AllProducts product={product} key={i} />
+          </li>
+        ))}
+      </ul>
 
       <h2>Most Popular</h2>
       <Container
@@ -175,8 +350,110 @@ export const HomepageMainBody = () => {
         img5="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/0d1b3df5-5cab-43a1-ab77-64d23ccc082c/9f970017-ea4c-4e60-8c91-27b8d021ff13/hp_brandStorefront_m_480_250322_05.jpg"
         img6="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/0d1b3df5-5cab-43a1-ab77-64d23ccc082c/9f970017-ea4c-4e60-8c91-27b8d021ff13/hp_brandStorefront_m_480_250322_06.jpg"
       />
-
       
+      <div style={{textAlign:"left"}} className="store-info-box">
+        <h3 style={{lineHeight:"1.9"}}>bigbasket - online grocery store</h3>
+        <p>
+          Did you ever imagine that the freshest of
+          <b> fruits and vegetables </b>, top quality pulses and food grains,{" "}
+          <b> dairy products </b> and hundreds of branded items could be
+          handpicked and delivered to your home, all at the click of a button?
+          India's first comprehensive online megastore, bigbasket.com, brings a
+          whopping 20000+ products with more than 1000 brands, to over 4 million
+          happy customers. From household cleaning products to beauty and
+          makeup, bigbasket has everything you need for your daily needs.
+          bigbasket.com is convenience personified We've taken away all the
+          stress associated with shopping for daily essentials, and you can now
+          order all your household products and even buy groceries online
+          without travelling long distances or standing in serpentine queues.
+          Add to this the convenience of finding all your requirements at one
+          single source, along with great savings, and you will realize that
+          bigbasket- India's largest online supermarket, has revolutionized the
+          way India shops for groceries. Online grocery shopping has never been
+          easier. Need things fresh? Whether it's fruits and vegetables or dairy
+          and meat, we have this covered as well! Get fresh eggs, meat, fish and
+          more online at your convenience. Hassle-free Home Delivery options
+        </p>
+        <p>
+          We deliver to 25 cities across India and maintain excellent delivery
+          times, ensuring that all your products from groceries to snacks
+          <b> branded foods </b> reach you in time.
+        </p>
+        <ul>
+          <li>
+            Slotted Delivery: Pick the most convenient delivery slot to have
+            your grocery delivered. From early morning delivery for early birds,
+            to late-night delivery for people who work the late shift, bigbasket
+            caters to every schedule.
+          </li>
+          <li>
+            Express Delivery: This super useful service can be availed by
+            customers in cities like Bangalore, Mumbai, Pune, Chennai, Kolkata,
+            Hyderabad and Delhi-NCR in which we deliver your orders to your
+            doorstep in 90 Minutes.
+          </li>
+          <li>
+            BB Specialty stores: Missed out on buying that essential item from
+            your favorite neighborhood store for tonight's party? We'll deliver
+            it for you! From bakery, sweets and meat to flowers and chocolates,
+            we deliver your order in 90 minutes, through a special arrangement
+            with a nearby specialty store, verified by us.
+          </li>
+        </ul>
+        <button
+          onClick={(e) => {
+            e.target.style.display = "none";
+            e.target.nextSibling.style.display = "block";
+          }}
+        >
+          Read More...
+        </button>
+        <div className="read-more"><br></br>
+          <h4 style={{lineHeight:"1.9"}}>India's biggest Online Supermarket</h4>
+          <p>
+            bigbasket.com believes in providing the highest level of customer
+            service and is continuously innovating to meet customer
+            expectations. Our On-time Guarantee is one such assurance where we
+            refund 5% of the bill value if the delivery is delayed (however, due
+            to the pandemic caused by Covid-19 our delivery might get delayed.
+            Delivery Guarantee will not be applicable). For all your order
+            values above Rs. 1200, we provide free delivery. A wide range of
+            imported and gourmet products are available through our express
+            delivery and slotted delivery service. If you ever find an item
+            missing on delivery or want to return a product, you can report it
+            to us within 48 hours for a 'no-questions-asked' refund.
+          </p>
+          <p>Best quality products for our quality-conscious customers.</p>
+          <p>
+            bigbasket.com is synonymous with superior quality and continues to
+            strive for higher levels of customer trust and confidence, by taking
+            feedback and giving our customers what they want. We have added the
+            convenience of pre-cut fruits in our Fresho range. If it's a product
+            category you're looking to shop from, we've made it convenient for
+            you to access all products in a section easily. For instance, if
+            you're looking for beverages, you can order from a long list of
+            <b> beverages </b>
+            that include cool drinks, hot teas, fruit juices and more.
+          </p>
+          <p>
+            We are proud to be associated closely with the farmers from whom we
+            source our fresh products. Most of our farm-fresh products are
+            sourced directly from farmers, which not only ensures the best
+            prices and freshest products for our customers but also helps the
+            farmers get better prices. With more than 80 Organic Fruits and
+            Vegetables and a wide range of organic staples, bigbasket has the
+            largest range in the organic products category.
+          </p>
+          <p>
+            When it comes to payment, we have made it easy for our customers can
+            pay through multiple payment channels like Credit and Debit cards,
+            Internet Banking, e-wallets and Sodexo passes or simply pay Cash on
+            Delivery (COD).The convenience of shopping for home and daily needs,
+            while not compromising on quality, has made bigbasket.com the online
+            supermarket of choice for thousands of happy customers across India.
+          </p>
+        </div>
+      </div>
     </FeatureSection>
   );
 };
