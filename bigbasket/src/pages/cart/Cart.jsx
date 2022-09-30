@@ -3,6 +3,9 @@ import { useState } from 'react';
 import {useDispatch,useSelector} from "react-redux";
 import {HStack,Stack,Container,Box, Button, Text,Divider, Center} from "@chakra-ui/react"
 import Discription from '../../component/Discription';
+import Display from '../../component/Display';
+import {getcart} from "./Cart_action"
+import { useEffect } from 'react';
 
 let datawa=[
   {itemcateogory:"Food&Grains",item:"Wheat Floor",price:"899",quantity:2},
@@ -15,21 +18,28 @@ const Cart = () => {
 
 
 
-
+  useEffect(()=>{
+    // dispatch(getcart());
+  },[])
   
 
   return (
     
       <Container border='1px solid' maxW='100%' maxH={'100%'}  backgroundColor={'#f3f3f3'} >
-        <Container backgroundColor={'#ffffff'}  maxW='75%' alignSelf={'left'} >
+        <Container backgroundColor={'#ffffff'}  maxW='79%' alignSelf={'left'} >
           <Box >
             <Text align={'left'} fontSize={{ base: '11px', md: '18px', lg: '28px' }}>{cart.length>0 ? `Your Basket (${cart.length})`:"There is no item in your basket"}</Text>
 
           </Box>
           
         <Divider orientation='horizontal' />
-          
-              <Discription  />
+        <Box w='100%' >
+          <Display />
+        </Box>
+        <Box w='100%' >
+           <Discription   />
+        </Box>
+        
 
         
           <Box display={'flex'} justifySelf='left' >
