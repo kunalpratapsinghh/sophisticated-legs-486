@@ -21,22 +21,17 @@ const properties={
 
 const Slideshow = () => {
     return (
-      
-      
-      <div className={slidestyle.top}>
+     <div className={slidestyle.top}>
         <Slide easing="ease"  {...properties}>
           {slideImages.map((el)=>
           (
             <div className={slidestyle.each} key={el.id}>
             <div style={{'backgroundImage': `url(${el.image})`}}>
-           
-            </div>
+           </div>
           </div>
           ))}
-            
-          
-      //   </Slide>
-      // </div>
+        </Slide>
+       </div>
     )
 };
 
