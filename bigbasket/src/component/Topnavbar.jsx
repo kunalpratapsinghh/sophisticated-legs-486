@@ -35,14 +35,16 @@ import {
   ModalContent,
   ModalCloseButton,
 } from "@chakra-ui/react";
+import Navbar_modal from "./Navbar_modal";
 import Userdetail from "../pages/login/Userdetail";
 
 
 export const Topnavbar = () => {
-  const [text, settext] = useState("");
-  const [show, setShow] = useState(true);
-  const [show1, setShow1] = useState(true);
-  const [state, setstate] = useState(false);
+  // const [text, settext] = useState("");
+  // const [show, setShow] = useState(true);
+  // const [show1, setShow1] = useState(true);
+  // const [state, setstate] = useState(false);
+  let [showmodal,setShowmodal] = useState(false);
 
 
   const navigate = useNavigate();
@@ -50,9 +52,9 @@ export const Topnavbar = () => {
 const {name,email} = useSelector((state)=>state.auth)
 console.log(name,"topnavbar")
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const toggle = () => {
-    setstate(true);
-  };
+  // const toggle = () => {
+  //   setstate(true);
+  // };
  
   return (
     <Box width={"75%"} margin="auto">
@@ -98,52 +100,12 @@ console.log(name,"topnavbar")
                 </Box>
                 <Box mr={"1rem"}>
                   <Flex alignItems={"center"}>
-                    {name==null ? (<Box mr={"0.5rem"} onClick={onOpen} >
+                    {name==null ? (<Box mr={"0.5rem"}  onClick={()=>setShowmodal(true)} >
                       <AiOutlineUser size="16px" />
                     </Box>):<Userdetail name={name} email={email} />}
                     <Box>
-                    <>
-        <Modal isOpen={isOpen} onClose={onClose}>
-          <ModalOverlay />
-          <ModalContent
-            style={{
-              maxWidth: "715px",
-              height: "510px",
-              backgroundColor: "transparent",
-              boxShadow: "none",
-            }}
-          >
-            <ModalCloseButton
-              marginTop="30px"
-              marginRight="50px"
-              borderRadius="50%"
-              backgroundColor="grey"
-            />
-            <div className={styles.flexbox}>
-              <div className={styles.leftbox}>
-                {show && show1 ? (
-                  <Email setShow={setShow} text={text} settext={settext} />
-                ) : null}
-                {!show && show1 ? (
-                  <Otp
-                    login={toggle}
-                    setShow={setShow}
-                    text={text}
-                    isOpen={onClose}
-                    setShow1={setShow1}
-                  />
-                 ) : null}
-                {!show && !show1 ? (
-                  <Signup close={onClose} login={toggle}></Signup>
-                ) : null}
-              </div>
-              <div className={styles.rightbox}>
-                {/* <Rightbox></Rightbox> */}
-              </div>
-            </div>
-          </ModalContent>
-        </Modal>
-      </>
+                      {showmodal==true&&<Navbar_modal  sh={setShowmodal} />}
+      
                     </Box>
                   </Flex>
                 </Box>
@@ -255,8 +217,8 @@ console.log(name,"topnavbar")
                       onMouseLeave={onClose}
                     >
                       <Flex>
-                        <div className={styles.borderright}>
-                          <Link as={RouterLink} to="/product">
+                        <div className={styles.borderright} onClick={()=>navigate("/products")} >
+                          <Link as={RouterLink} to="/products">
                             <MenuItem borderBottom={"1px solid #e8e8e8"}>
                               Fruits & Vegetables
                             </MenuItem>

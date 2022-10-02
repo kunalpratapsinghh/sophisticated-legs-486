@@ -8,7 +8,7 @@ import {authReducer} from "../pages/Signup/auth.reducer"
 const rootreducer=combineReducers({
     auth:authReducer,
     cart:Cart_reducer,
-    productReducer:productReducer,
+    product:productReducer,
 
 })
 export const store =legacy_createStore(rootreducer,applyMiddleware(thunk))

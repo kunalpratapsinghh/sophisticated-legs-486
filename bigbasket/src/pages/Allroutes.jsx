@@ -3,11 +3,8 @@ import {Routes,Route} from "react-router-dom"
 import Cart from './cart/Cart'
 import Checkout from './checkout/Checkout'
 import Homepage from './homepage/Homepage'
-
-
-import Login from './login/Login'
 import Products from './Products/Products'
-import Signup from './signup/Signup'
+
 
 const Router = () => {
   return (
