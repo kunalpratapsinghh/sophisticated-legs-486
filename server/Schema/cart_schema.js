@@ -1,9 +1,11 @@
 const {Schema,model} = require("mongoose");
 const Cart_schema= new Schema({
     //userid:"",
+    user_id:Schema.Types.ObjectId,
+    product_id:Schema.Types.ObjectId,
     Title:String,
     Brand:String,
-    Description:String,
+    count:{type:Number,default:1},
     Image_url:String,
     Price:Number,
     Category:String
