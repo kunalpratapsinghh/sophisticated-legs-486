@@ -1,0 +1,369 @@
+.product-display {
+    width: 100%;
+    padding-bottom: 20px;
+    display: grid;
+    gap: 12px;
+    padding-top: 5px;
+    line-height: initial !important;
+    cursor: pointer;
+}
+
+.product-display:hover {
+box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+border-radius: 2px;
+}
+
+.save-price {
+    color: #ba5253;
+    text-align: right;
+    background-color: #fff;
+    font: 10px ProximaNovaA-Semibold;
+    line-height: 22px;
+    width: 95%;
+    margin: auto;
+    padding: 0 8px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.asterisk-icon {
+    display: block;
+    width: 18px;
+    height: 22px;
+    float: right;
+    background-image: url("https://www.bbassets.com/static/v2530/custPage/build/content/img/product-deck-sprite.png");
+    background-repeat: no-repeat;
+    background-position: -24px -24px;
+}
+
+#ip {
+    width: 30px;
+}
+
+.pic-brand-name {
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 10px; */
+    padding: 10px;
+    padding-bottom: 5px;
+    line-height: initial !important;
+}
+
+
+
+.pic-brand-name p {
+    margin: 0 !important;
+}
+
+.pic-brand-name img {
+    width: 80%;
+    height: 150px
+}
+
+.pic-brand-name .brand {
+    font-size: 11px;
+    color: #999999;
+    text-transform: capitalize;
+}
+
+
+.pic-brand-name .name {
+    font-size: 12px;
+    color: #000000;
+    margin-top: 5px !important;
+}
+
+
+
+.weight {
+    font-size: 12px;
+    color: #666666;
+    margin: 35px 0 10px 0;
+}
+
+.price-details {
+    background: #f4f3f2;
+    border: 1px solid #fcfcfc;
+    padding: 0 5px 5px;
+    width: 90%;
+    margin: auto;
+    float: left;
+}
+
+.po-markup h5 {
+    margin: 6px 0 0;
+    color: #666;
+    font: 11px/20px ProximaNovaA-Regular;
+    /* margin: 9px 0 0; */
+    display: inline-block;
+    float: left;
+    line-height: 1;
+}
+
+.po-markup h4 {
+    margin: 0 10px 0 0 !important;
+    padding: 0;
+    font: 18px ProximaNovaA-Light;
+    color: #6e6e71;
+    display: block;
+}
+
+.mp-price {
+        text-decoration: line-through;
+        font: 10px ProximaNovaA-Regular;
+        color: #6e6e71;
+}
+
+.discnt-price {
+    color: #231f20;
+    font: 14px ProximaNovaA-Regular;
+}
+
+.qty-card-span {
+    display: flex;    
+}
+
+.qty-card-span button:focus {
+    outline: none;
+}
+
+
+
+.qty-card-span input {
+    background-color: #FFFFFF;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid silver;
+    text-align: center;
+    width: 50px;
+    color: grey;
+    font-size: small;
+}
+
+.qty-card-span input::-webkit-outer-spin-button,
+.qty-card-span input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.qty-card-span .btn-qty {
+    color: #999999;
+    background-color: #EEEEEE;
+    font-size: 12px !important;
+    padding: 0px 4px;
+    border: 1px solid silver;
+    border-radius: 5px 0 0 5px;
+}
+
+
+.qty-card-span .min-btn, .max-btn {
+    padding: 0 4px;
+    margin: 0;
+    border: 1px solid silver;
+    color: #999;
+    background: linear-gradient(180deg, #fff 0, #eaeaea 99%) repeat scroll 0 0 transparent;
+    width: 20px;
+    border: 1px solid #dedede;
+    font-size: 15px;
+
+}
+
+.qty-card-span .min-btn {
+    border-radius: 4px 0 0 4px;
+}
+.qty-card-span .max-btn {
+    border-radius: 0 4px 4px 0;
+}
+
+.qty-card-span-1 .add-to-cart-btn {
+    margin: 0;
+    border-radius: initial !important;
+}
+
+.add-to-cart-btn {
+    padding: 0 15px !important;
+    margin-left: 4px;
+    height: 22px;
+    color: #414042 !important;
+    font: 13px ProximaNovaA-Regular;
+    display: inline-block;
+    line-height: 1.7;
+    float: left;
+    border-radius: 4px !important;
+    width: fit-content !important;
+}
+
+.add-to-cart-btn-1 {
+    text-transform: none !important;
+    font-size: 11px !important;
+}
+
+.add-to-cart-btn, .notify-btn {
+    
+    text-transform: uppercase;    
+    border-radius: 4px;
+    border: 1px solid #fee67c;
+    background: #fee67c;
+    background: linear-gradient(180deg, #fee67c 0, #f2cb76);
+}
+
+.add-to-cart-btn:hover {
+    background: #fdf57f;
+}
+
+.notify-btn:hover {
+    background: #fdf57f;
+}
+
+.notify-btn {
+    padding: 2px 15px;
+    margin: 0 auto !important;
+    display: grid;
+    place-items: center;
+    font: 13px ProximaNovaA-Regular;
+}
+
+.ptag {
+    font-size: 10px;
+    color: #333;
+    font-family: ProximaNovaA-Regular;
+    margin-bottom: 2px;
+    line-height: 15px;
+}
+
+.exp-icon {
+    background-image: url("https://www.bbassets.com/static/v2530/custPage/build/content/img/express-del-gray.svg");
+    background-size: 25px;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 25px;
+    display: inline-block;
+    float: left;
+
+}
+
+.exp-icon:hover {
+    color: red;
+}
+
+.delivery {
+    display: inline-block;
+    float: left;
+    width: 150px;
+}
+
+
+.bskt-icon {
+    background-image: url("https://www.bbassets.com/static/v2530/custPage/build/content/img/product-deck-sprite.png");
+    background-repeat: no-repeat;
+    background-position: -5px -5px;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .product-display {
+        width: 95%;
+        border: 1px solid silver;
+        row-gap: 0 !important;
+    }
+    .pic-brand-name {
+        flex-direction: row;
+        gap: 20px;
+    }
+    .pic-brand-name div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .pic-brand-name .name {
+        font-size: 13px;
+        color: #000000;
+        margin-top: 6px;
+    }
+    .pic-brand-name img {
+        width: 75px;
+        height: 75px;
+    }
+    .qty-card-span .add-to-cart-btn {
+        margin-left: 20px;
+    }
+    .price-details {
+        width: 100%;
+    }
+    
+    .add-to-cart-btn-1 {
+        margin: 0 !important;
+        padding-left: 10vw !important;
+        padding-right: 10vw !important;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .pic-brand-name {
+        flex-direction: row;
+        gap: 20px;
+    }
+    .pic-brand-name div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .pic-brand-name .name {
+        font-size: 13px;
+        color: #000000;
+        margin-top: 6px;
+    }
+    .pic-brand-name img {
+        width: 75px;
+        height: 75px;
+    }
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .pic-brand-name {
+        flex-direction: row;
+        gap: 20px;
+    }
+    .pic-brand-name div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .pic-brand-name .name {
+        font-size: 13px;
+        color: #000000;
+        margin-top: 6px;
+    }
+    .pic-brand-name img {
+        width: 75px;
+        height: 75px;
+    }
+    
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .pic-brand-name {
+        flex-direction: column;
+    }
+    .pic-brand-name img {
+        width: 100%;
+        height: 150px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .pic-brand-name {
+        flex-direction: column;
+    }
+}

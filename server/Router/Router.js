@@ -60,8 +60,7 @@ router.post("/email", async (req, res) => {
       service: "gmail",
       secure:false,
       host:"smtp.gmail.com",
-      // port: 567, //465//"cyno28cyno@gmail.com"
-      // port:465,
+      
       auth: { 
         user: "bigbasketclone265@gmail.com",
         pass:"loobtgrxwqlecrlo",
@@ -696,6 +695,11 @@ router.delete("/cart/:productid",async(req,res)=>{
 })
 
 
+
+
+
+//patch
+
 ///////////////////////////// product page//////////////////////////////
 
 //get
@@ -703,6 +707,16 @@ router.delete("/cart/:productid",async(req,res)=>{
 router.get("/product",async(req,res)=>{
     try{
         let product = await product_model.find();
+        res.status(200).send(product);
+
+    }catch(e){
+        res.status(400).send(e.message)
+    }
+})
+
+router.get("/product/:id",async(req,res)=>{
+    try{
+        let product = await product_model.findById(req.params.id);
         res.status(200).send(product);
 
     }catch(e){
@@ -753,20 +767,7 @@ router.post("/cart/:userid",async(req,res)=>{
 
     }
 })
-//patch
-
-// router.patch("/cart/:id",async(req,res)=>{
-//     let {id}= req.params.id;
 
 
-//     try{
-
-//         let data = cart_model.updateOne({_id:id},{});{name:"saurav",cart:[]}
-        
-
-//     }catch(e){
-
-//     }
-// })
 
 module.exports = router;

@@ -1,7 +1,7 @@
-import { GET_PRODUCT_ERROR, GET_PRODUCT_LOADING, GET_PRODUCT_SUCCESS} from "./product.action.type";
+import {GET_PRODUCT_ERROR, GET_PRODUCT_LOADING, GET_PRODUCT_SUCCESS} from "./product.action.type";
 
 const initialState = {
-    getProducts: {
+    products: {
         loading: false,
         error: false,
         data: [],
@@ -12,13 +12,13 @@ const initialState = {
 export const productReducer = (state = initialState, { type, payload }) => {
     switch (type) {
         case GET_PRODUCT_LOADING: {
-            return { ...state, getProducts: { ...state.getProducts, loading: true, error: false } }
+            return { ...state, products: { ...state.products, loading: true, error: false } }
         }
         case GET_PRODUCT_SUCCESS: {
-            return { ...state, getProducts: { ...state.getProducts, data: payload, loading: false, error: false } }
+            return { ...state, products: { ...state.products, data: payload, loading: false, error: false } }
         }
         case GET_PRODUCT_ERROR: {
-            return { ...state, getProducts: { ...state.getProducts, loading: false, error: true } }
+            return { ...state, products: { ...state.products, loading: false, error: true } }
         }
 
         
