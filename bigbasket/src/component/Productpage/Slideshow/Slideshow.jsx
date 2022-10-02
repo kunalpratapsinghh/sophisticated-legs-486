@@ -21,7 +21,7 @@ const properties={
 
 const Slideshow = () => {
     return (
-     <div className={slidestyle.top}>
+     <div className={slidestyle.top} style={{ marginTop:"0.5rem"}}>
         <Slide easing="ease"  {...properties}>
           {slideImages.map((el)=>
           (

@@ -4,6 +4,7 @@ import React, { useEffect, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { addtoCart, fetchData} from '../../redux/product/product.action';
 import styles from "./products.module.css"
+import Content from '../../component/Productpage/Content/Content';
 const Products = () => {
   const dispatch=useDispatch();
   const {data}=useSelector((state)=>state.product.products);
@@ -85,7 +86,8 @@ const Country=["Australia","China","Greece","India","Italy","South Africa","Spai
 
   
   return (
-    <Container maxW={"100%"} margin={"auto"}>
+    <Container maxW={"100%"} margin={"auto"} mt="1rem">
+      <Flex width={"90%"} margin={"auto"}><Text lineHeight={"21px"} fontSize={"10px"} fontFamily={"ProximaNovaA-Regular"} color={"#818285"} >HOME { " > "} </Text></Flex>
    <Slideshow/>
    <Image width={"90%"} margin={"auto"} src="https://www.bigbasket.com/media/uploads/flatpages/test-1/Fruits%20&%20vegetables.jpg"/>
    <Flex gap={"1rem"} width={"90%"} margin={"auto"} marginTop={"1rem"} >
@@ -107,7 +109,7 @@ const Country=["Australia","China","Greece","India","Italy","South Africa","Spai
       <Text fontSize="14px">Price</Text>
     <Box borderBottom={"1px solid #dfdfdf"} width="95%"></Box>
     <Flex direction={"column"} p={0} gap={0} fontFamily={"ProximaNovaA-Regular"} color={"#898989"} lineHeight={"4px"}>
-      <Checkbox onClick={(e)=>filter(10)} value="10"><Text fontSize={"14px"}>Less than Rs 20 (67)</Text></Checkbox>
+      <Checkbox onClick={()=>filter(10)} value="10"><Text fontSize={"14px"}>Less than Rs 20 (67)</Text></Checkbox>
       <Checkbox onClick={(e)=>filter(e.target.value)} value={21}><Text fontSize={"14px"}>Rs 21 to Rs 50 (216)</Text></Checkbox>
       <Checkbox onClick={(e)=>filter(e.target.value)} value={51}><Text fontSize={"14px"}>Rs 51 to Rs 100 (155)</Text></Checkbox>
       <Checkbox onClick={(e)=>filter(e.target.value)} value={101}><Text fontSize={"14px"}>Rs 101 to Rs 200 (94) </Text></Checkbox>
@@ -153,12 +155,14 @@ const Country=["Australia","China","Greece","India","Italy","South Africa","Spai
     <Image src="https://www.bbassets.com/static/v2590/custPage/build/content/img/standard-del.svg" w={"1.4rem"} />
     <Text fontSize={"10px"}> ALL PRODUCTS</Text>
     </Flex>
+
+
    <Box mt={"1rem"} borderBottom={"1px solid #dfdfdf"} ></Box>
     <Grid templateColumns={"repeat(4,3fr)"} borderLeft={"1px solid #dfdfdf"} >
 
     {products.map((el)=>
     (
-        <Flex direction={"column"} width={"200px"} p={2} borderRight={"1px solid #dfdfdf"} _hover={{boxShadow:'md',  bg:'white'}} key={el._id} textAlign="start" margin={"auto"} mt={"1rem"}>
+        <Flex direction={"column"} width={"210px"} p={2} borderRight={"1px solid #dfdfdf"} _hover={{boxShadow:'md',  bg:'white'}} key={el._id} textAlign="start" margin={"auto"} mt={"1rem"}>
             {/* <Box boxShadow='md' p='6' rounded='md' bg='white'> */}
             <Flex  direction={"row-reverse"} boxShadow='md' p={2}   bg='white' h={6} >
             <Box className={styles.asterIcon} mt={"-5px"}></Box>
@@ -198,6 +202,7 @@ const Country=["Australia","China","Greece","India","Italy","South Africa","Spai
     </Grid>
     </Box>
     </Flex>
+    <Content/>
 </Container>
   )
 }
