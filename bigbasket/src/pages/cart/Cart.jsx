@@ -20,7 +20,7 @@ const Cart = () => {
 
 
   useEffect(()=>{
-    // dispatch(getcart());
+    dispatch(getcart());
   },[])
   
 

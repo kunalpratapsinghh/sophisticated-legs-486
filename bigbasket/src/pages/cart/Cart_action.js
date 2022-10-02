@@ -2,9 +2,10 @@ import {cart_add_successfull,cart_error,cart_loading,cart_remove} from "./Cart_a
 
 import axios from "axios"
 
-export const getcart=()=>(dispatch)=>{
+export const getcart=(userid)=>async(dispatch)=>{
     dispatch({type:cart_loading});
-    axios.get("http://localhost:8080/cart").then((r)=>{
+    
+    axios.get(`http://localhost:8080/cart/${userid}`).then((r)=>{
         console.log(r.data)
         dispatch({type:cart_add_successfull,payload:r.data})
     }).catch((e)=>{

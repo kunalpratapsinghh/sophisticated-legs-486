@@ -1,0 +1,114 @@
+.heading {
+  color: #84c225;
+  font-size: 16px;
+  text-align: center;
+  line-height: 19px;
+  font-weight: 600;
+}
+.leftbox {
+  background-color: white;
+  width: 355px;
+  height: 480px;
+  padding-top: 30px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+  z-index: 1;
+  position: relative;
+}
+.flexbox {
+  display: flex;
+  align-items: center;
+}
+.rightbox {
+  background-color: white;
+  width: 280px;
+  height: 380px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.input {
+  border-color: #666;
+  outline: none;
+  margin-top: 30%;
+  margin-left: 10%;
+  font-size: 14px;
+  -webkit-tap-highlight-color: transparent;
+  width: 80%;
+  height: 34px;
+}
+.input:hover {
+  outline: none;
+}
+.Lbtn {
+  margin: 30px;
+  margin-top: 100px;
+  margin-bottom: 1rem;
+
+  display: block;
+  padding: 13px;
+  width: 295px;
+  font-weight: bold;
+  border: 1px solid rgb(102, 102, 102);
+  font-size: 14px;
+  line-height: 1.42857;
+  border-radius: 4px;
+  white-space: nowrap;
+  color: #333;
+  background-color: #fff;
+}
+.Cbtn {
+  margin: 30px;
+  margin-top: 0;
+  display: block;
+  padding: 13px;
+  width: 295px;
+  font-weight: bold;
+  border: 1px solid #ccd0c7 !important;
+  font-size: 14px;
+  line-height: 1.42857;
+  border-radius: 4px;
+  white-space: nowrap;
+  color: #fff;
+  background-color: #84c225;
+}
+.psmall {
+  font-size: 10px;
+  text-align: center;
+}
+.gplay {
+  width: 101px;
+  height: 30px;
+  font-size: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid #ccc;
+  opacity: 0.75;
+  border-radius: 4px;
+}
+.gplay img {
+  width: 25px;
+  aspect-ratio: 1;
+}
+.apple {
+  width: 101px;
+  height: 30px;
+  font-size: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid #ccc;
+  opacity: 0.75;
+  border-radius: 4px;
+  margin-left: 15px;
+}
+.apple img {
+  width: 24px;
+  aspect-ratio: 1;
+}
+.rightinnerbox p {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: #444;
+  font-weight: 500;
+}
