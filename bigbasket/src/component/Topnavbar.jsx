@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState,useEffect,useRef}from "react";
 import {
   Box,
   Flex,
@@ -25,10 +25,37 @@ import { useSelector } from "react-redux";
 
 // import {Link as RouterLink} from "react-router-dom"
 
+//from copy
+import Email from "../pages/login/Email"
+import Otp from "../pages/login/Otp";
+import Signup from "../pages/login/Signup"
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalCloseButton,
+} from "@chakra-ui/react";
+import Navbar_modal from "./Navbar_modal";
+import Userdetail from "../pages/login/Userdetail";
+
+
 export const Topnavbar = () => {
+  // const [text, settext] = useState("");
+  // const [show, setShow] = useState(true);
+  // const [show1, setShow1] = useState(true);
+  // const [state, setstate] = useState(false);
+  let [showmodal,setShowmodal] = useState(false);
+
+
   const navigate = useNavigate();
-//   const cart = useSelector((state) => state.products.cart);
+//   const cart = useSelector((state) => state.cart);
+const {name,email} = useSelector((state)=>state.auth)
+console.log(name,"topnavbar")
   const { isOpen, onOpen, onClose } = useDisclosure();
+  // const toggle = () => {
+  //   setstate(true);
+  // };
+ 
   return (
     <Box width={"75%"} margin="auto">
       <Box>
@@ -43,7 +70,7 @@ export const Topnavbar = () => {
               <img
                 src="https://www.bbassets.com/static/staticContent/bb_logo.png"
                 alt="logo"
-              />
+              /> 
             </Link>
           </Box>
           <Box width="78%" ml={"2rem"}>
@@ -73,11 +100,12 @@ export const Topnavbar = () => {
                 </Box>
                 <Box mr={"1rem"}>
                   <Flex alignItems={"center"}>
-                    <Box mr={"0.5rem"}>
+                    {name==null ? (<Box mr={"0.5rem"}  onClick={()=>setShowmodal(true)} >
                       <AiOutlineUser size="16px" />
-                    </Box>
+                    </Box>):<Userdetail name={name} email={email} />}
                     <Box>
-                      {/* <LogedIn /> */}
+                      {showmodal==true&&<Navbar_modal  sh={setShowmodal} />}
+      
                     </Box>
                   </Flex>
                 </Box>
@@ -189,8 +217,8 @@ export const Topnavbar = () => {
                       onMouseLeave={onClose}
                     >
                       <Flex>
-                        <div className={styles.borderright}>
-                          <Link as={RouterLink} to="/product">
+                        <div className={styles.borderright} onClick={()=>navigate("/products")} >
+                          <Link as={RouterLink} to="/products">
                             <MenuItem borderBottom={"1px solid #e8e8e8"}>
                               Fruits & Vegetables
                             </MenuItem>

@@ -1,0 +1,57 @@
+.heading {
+  color: #84c225;
+  font-size: 18px;
+  line-height: 19px;
+  text-align: center;
+}
+.psmall {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  font-size: 14px;
+  color: #979797;
+  margin-top: 1.5rem;
+}
+
+.Namediv {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  justify-content: space-evenly;
+  margin-top: 1rem;
+}
+.Namediv input {
+  border-bottom: 1px solid #c0bfbf;
+  width: 40%;
+  padding: 2px 10px;
+  outline: none;
+  font-size: 14px;
+}
+.einput {
+  font-size: 14px;
+  border-bottom: 1px solid #c0bfbf;
+  width: 80%;
+  padding: 2px 10px;
+  outline: none;
+  margin: auto;
+}
+.Emaildiv {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  justify-content: space-evenly;
+  margin-top: 1rem;
+}
+.varbtn {
+  width: clamp(70px, 300px, 300px);
+  margin: auto;
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  height: 70px;
+  font-weight: 600;
+  color: #fff;
+  padding: 15px 0;
+  border-radius: 5px;
+  background-color: #84c225;
+}

@@ -3,7 +3,8 @@ import {Stack,Container,Th,Button,Td,Tbody,Thead,TableContainer,Tr,Table} from "
 import { CloseIcon } from "@chakra-ui/icons";
 import {useDispatch,useSelector} from "react-redux"
 import { useEffect } from 'react';
-import {getcart} from "../pages/cart/Cart_action"
+import {getcart} from "../pages/cart/Cart_action";
+import {useNavigate} from "react-router-dom"
 
 
 const Display = () => {
@@ -11,6 +12,8 @@ const Display = () => {
     const dispatch = useDispatch();
     let [count,setCount] = useState(0);
     let saved=0;
+    let navigate = useNavigate();
+    
 
 let handleDelete=()=>{
 

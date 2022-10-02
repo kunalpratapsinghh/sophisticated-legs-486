@@ -3,9 +3,8 @@ import {Routes,Route} from "react-router-dom"
 import Cart from './cart/Cart'
 import Checkout from './checkout/Checkout'
 import Homepage from './homepage/Homepage'
-import Login from './login/Login'
 import Products from './Products/Products'
-import Signup from './signup/Signup'
+
 
 const Router = () => {
   return (
@@ -13,9 +12,9 @@ const Router = () => {
     <Routes>
         
         <Route path={'/'} element={<Homepage />} />
-        <Route path={'/login'} element={<Login />} />
-        <Route path={'/signup'} element={<Signup />} />
+
         <Route path={'/products'} element={<Products/>} />
+
         <Route path={'/cart'} element={<Cart />} />
         <Route path={'/checkout'} element={<Checkout />} />
         

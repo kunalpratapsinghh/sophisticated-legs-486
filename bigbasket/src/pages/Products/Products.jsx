@@ -27,6 +27,7 @@ const Country=["Australia","China","Greece","India","Italy","South Africa","Spai
   {
     console.log(id);
    dispatch(addtoCart(id));
+   alert("One item is added")
   }
 
 
