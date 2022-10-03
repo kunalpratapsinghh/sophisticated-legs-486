@@ -12,8 +12,18 @@ const Discription = () => {
   let [total,setTotal] = useState(0);
   let [saved,setSaved] = useState(0);
 
-useEffect(()=>{
+  const handletotal = ()=>{
+    let p=0;
+    p = cart.reduce((a,el)=>{
+      return a+((el.Price)*el.count)
+  
+    },0);
+    setTotal(p);
+    console.log(p);
+  }
 
+useEffect(()=>{
+  handletotal()
   
 
 },[])

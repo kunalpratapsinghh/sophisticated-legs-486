@@ -14,13 +14,13 @@ let datawa=[
 ]
 
 const Cart = () => {
-  let {cart} = useSelector((state)=>state.cart);
+  let {cart,userid} = useSelector((state)=>state.cart);
   let dispatch = useDispatch();
 
-
-
+console.log(cart); 
+ let a = localStorage.getItem("userid");
   useEffect(()=>{
-    dispatch(getcart());
+    dispatch(getcart(a));
   },[])
   
 
