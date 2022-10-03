@@ -1,5 +1,5 @@
 <h1>Bigbasket Clone</h1> 
-<a href="/">Live Site</a>
+<a href="https://bigbasketclonemasai.netlify.app/">Live Site</a>
 <hr>
 <p>This is a working clone of the Bigbasket website, this project has been done in order to learn the basic working of a website by implementing HTML5, CSS3, JavaScript, React. Working on this project helps to learn a lot of new things that goes into building a website. This is our collaborative project under the guidance of MASAI Team to facilitate the full stack web development curriculum.</p>
 <h2>This is a collaborative Project from Masai School in the Construct Week. We are 5 members of the team:</h2>
