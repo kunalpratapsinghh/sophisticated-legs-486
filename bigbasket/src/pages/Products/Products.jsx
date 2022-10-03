@@ -23,6 +23,7 @@ const Country=["Australia","China","Greece","India","Italy","South Africa","Spai
 
 
   // add to cart function
+
   const addtocart=(el,op)=>
   {
     
@@ -31,6 +32,7 @@ const Country=["Australia","China","Greece","India","Italy","South Africa","Spai
    console.log(el);
    dispatch(addtoCart(el,userid));
    alert("One item is added")
+
   }
 
 
@@ -194,9 +196,13 @@ const Country=["Australia","China","Greece","India","Italy","South Africa","Spai
           <span><Text fontSize={"9px"}>Standard Delivery: Tomorrow</Text>
           <Text fontSize={"9px"}> 3:00PM - 7:30PM</Text></span>
           </Flex>
-          <Flex h={"1.2rem"} gap={"5px"}><Flex><Text fontSize={"10px"} border={"1px solid #e0e0e0"} w={6} color={"#999999"} fontWeight={400} onClick={()=>addtoCart(el,"subs")} >Qty</Text>
-          <Text value={1} h={"1.2rem"} w={"3rem"} textAlign={"center"} fontSize={"10px"} border={"1px solid #e0e0e0"} bgColor={"white"}>{count}</Text></Flex>
-          <Flex><Button onClick={()=>addtocart(el,"subs")} _hover={{bgColor:"#fce681"}} h={"1.2rem"} fontSize={"13px"} bgColor={"#f7d779"} borderRadius={"none"}>ADD<Box className={styles.bsktIcon}></Box></Button>
+          <Flex h={"1.2rem"} ><Button onClick={()=>addtocart(el,"subs")} _hover={{bgColor:"#fce681"}} h={"1.2rem"} fontSize={"13px"} bgColor={"#f7d779"} borderRadius={"none"}>-</Button>
+          <Text  h={"1.2rem"}  textAlign={"center"} fontSize={"10px"} border={"1px solid #e0e0e0"} bgColor={"white"}>&nbsp;{count}&nbsp;</Text>
+          <Button onClick={()=>addtocart(el,"add")} _hover={{bgColor:"#fce681"}} h={"1.2rem"} fontSize={"13px"} bgColor={"#f7d779"} borderRadius={"none"}>+</Button>
+
+          
+          <Flex><Button ml={"3px"} onClick={()=>addtocart(el,"add")} _hover={{bgColor:"#fce681"}} h={"1.2rem"} fontSize={"13px"} bgColor={"#f7d779"} borderRadius={"none"}>ADD<Box className={styles.bsktIcon}></Box></Button>
+
           </Flex>
           </Flex>
           </Flex>
