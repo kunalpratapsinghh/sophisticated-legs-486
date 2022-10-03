@@ -8,7 +8,7 @@ import {useNavigate} from "react-router-dom"
 
 
 const Display = () => {
-    let {cart} = useSelector((state)=>state.cart);
+    let {cart} = useSelector((state)=>state.cart); 
     const dispatch = useDispatch();
     let [count,setCount] = useState(0);
     let saved=0;
@@ -79,12 +79,12 @@ useEffect(()=>{
                           -
                         </Button>
                         <Button variant={"outline"} >
-                          {count}
+                          {e.count}
                         </Button>
                         <Button
                           variant={"outline"}
                           
-                          onClick={() => setCount(count + 1)}
+                          onClick={() =>"d"}
                         >
                           +
                         </Button>

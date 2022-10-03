@@ -62,8 +62,8 @@ router.post("/email", async (req, res) => {
       host:"smtp.gmail.com",
       
       auth: { 
-        user: "bigbasketclone265@gmail.com",
-        pass:"loobtgrxwqlecrlo",
+        user: "bigbasketclone8@gmail.com",   //"bigbasketclone265@gmail.com",
+        pass:"icfedlmipbzfpcud", //"loobtgrxwqlecrlo"
       },
     });
     let otp = Math.floor(100000 + Math.random() * 900000);
@@ -668,7 +668,7 @@ router.post("/email", async (req, res) => {
 
 ////////////////cart get
 router.get("/cart/:userid",async (req,res)=>{
-    let {userid} = req.params.userid;
+    let {userid} = req.params;
 
 
     try{
@@ -726,7 +726,8 @@ router.get("/product/:id",async(req,res)=>{
 ////post
 
 router.post("/cart/:userid",async(req,res)=>{
-    let {userid} = req.params.userid;
+    let {userid} = req.params;
+    console.log("req.params",req.params);
     let {product_id,Title,Brand,Image_url,Category,Price,op} = req.body;
 
     
@@ -734,9 +735,12 @@ router.post("/cart/:userid",async(req,res)=>{
     
     try{
         let item = await cart_model.findOne({product_id:product_id})
+        console.log(item);
         if(!item){
+          
             let a = {...req.body,user_id:userid}
             delete a['op'];
+            console.log(a,"a");
             console.log(a);
             let cart = new cart_model(a);
             await cart.save();
@@ -756,14 +760,14 @@ router.post("/cart/:userid",async(req,res)=>{
         }else if(a.count==1){
           await cart_model.deleteOne({product_id:product_id});
         }
-        return res.status(200).send("invalid");
+        return res.status(200).send({message:"removed from cart"});
         
         
         
         
 
     }catch(e){
-        res.status(400).send("something went wrong")
+        res.status(400).send({message:"something went wrong"})
 
     }
 })
