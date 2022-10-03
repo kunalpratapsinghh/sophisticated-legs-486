@@ -2,7 +2,7 @@ const {Schema,model} = require("mongoose");
 const Cart_schema= new Schema({
     Title:String,
     Brand:String,
-    Description:String,
+    Description:String, 
     Image_url:String,
     Price:Number,
     Category:String

@@ -11,18 +11,25 @@ export const fetchData = (filter) => (dispatch) => {
 }
 
 
-export const addtoCart = (el) => (dispatch) => {
-    const id=localStorage.getItem("userid")
-    axios.get(`http://localhost:8080/product/${id}`)
-        .then((r) => {
-            const data = {
-                ...r.data,
-                Count:1
-            }
-            axios.post(`http://localhost:8080/cart`, data)
-            .then((r)=>alert(r.data));
-            
-        })
+
+export const addtoCart = (el,userid) => async(dispatch) => {
+    console.log(userid,"userid");
+    axios.post(`http://localhost:8080/cart/${userid}`,{
+        
+        product_id:el._id,
+        Title:el.Title,
+        Brand:el.Brand,
+        Image_url:el.Image_url,
+        Price:el.Price,
+        Category:el.Category,
+        op:el.op
+    }).then((r)=>{
+        console.log(r.message);
+
+    }).catch((e)=>{
+        console.log(e.message)
+    })
+
 }
 
 
