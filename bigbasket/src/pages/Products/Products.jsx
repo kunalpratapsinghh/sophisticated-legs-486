@@ -23,11 +23,11 @@ const Country=["Australia","China","Greece","India","Italy","South Africa","Spai
 
 
   // add to cart function
-  const addtocart=(id)=>
+  const addtocart=(el)=>
   {
-    console.log(id);
-   dispatch(addtoCart(id));
-   alert("One item is added")
+    console.log(el);
+   dispatch(addtoCart(el));
+  //  alert("One item is added")
   }
 
 
@@ -193,7 +193,7 @@ const Country=["Australia","China","Greece","India","Italy","South Africa","Spai
           </Flex>
           <Flex h={"1.2rem"} gap={"5px"}><Flex><Text fontSize={"10px"} border={"1px solid #e0e0e0"} w={6} color={"#999999"} fontWeight={400}>Qty</Text>
           <Text value={1} h={"1.2rem"} w={"3rem"} textAlign={"center"} fontSize={"10px"} border={"1px solid #e0e0e0"} bgColor={"white"}>{count}</Text></Flex>
-          <Flex><Button onClick={()=>addtocart(el._id)} _hover={{bgColor:"#fce681"}} h={"1.2rem"} fontSize={"13px"} bgColor={"#f7d779"} borderRadius={"none"}>ADD<Box className={styles.bsktIcon}></Box></Button>
+          <Flex><Button onClick={()=>addtocart(el)} _hover={{bgColor:"#fce681"}} h={"1.2rem"} fontSize={"13px"} bgColor={"#f7d779"} borderRadius={"none"}>ADD<Box className={styles.bsktIcon}></Box></Button>
           </Flex>
           </Flex>
           </Flex>

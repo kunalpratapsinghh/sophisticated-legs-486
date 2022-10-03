@@ -8,7 +8,7 @@ import Display from '../../component/Display';
 import {getcart} from "./Cart_action"
 import { useEffect } from 'react';
 
-let datawa=[
+let data=[
   {itemcateogory:"Food&Grains",item:"Wheat Floor",price:"899",quantity:2},
   {itemcateogory:"Brivarage",item:"Icecream",price:"500",quantity:1}
 ]

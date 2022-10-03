@@ -10,17 +10,9 @@ export const fetchData = (filter) => (dispatch) => {
 
 }
 
-// export const sortdata=(filter)=>(dispatch)=>
-// {
-//     axios.get(`http://localhost:8080/product?sort_by=${filter}`)
-//             .then((r) => { dispatch({ type: GET_PRODUCT_SUCCESS, payload: r.data }) })
-//             .catch(() => dispatch({ type: GET_PRODUCT_ERROR }));
-   
-// }
 
-
-export const addtoCart = (id) => (dispatch) => {
-    console.log(id)
+export const addtoCart = (el) => (dispatch) => {
+    const id=localStorage.getItem("userid")
     axios.get(`http://localhost:8080/product/${id}`)
         .then((r) => {
             const data = {
