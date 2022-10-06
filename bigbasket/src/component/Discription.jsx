@@ -26,7 +26,7 @@ useEffect(()=>{
   handletotal()
   
 
-},[])
+})
 
 
   return (
