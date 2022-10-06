@@ -4,7 +4,6 @@ import {useNavigate} from "react-router-dom"
 import {useSelector,useDispatch} from "react-redux"
 import { useState } from 'react';
 import { useEffect } from 'react';
-import {handleuserdelete} from "../pages/cart/Cart_action"
 
 
 const Discription = () => {
@@ -12,9 +11,6 @@ const Discription = () => {
   const {cart} = useSelector((state)=>state.cart);
   let [total,setTotal] = useState(0);
   let [saved,setSaved] = useState(0);
-
-  let dispatch = useDispatch();
-
 
   const handletotal = ()=>{
     let p=0;
@@ -25,13 +21,6 @@ const Discription = () => {
     setTotal(p);
     console.log(p);
   }
-  
-  let handledelete =()=>{
-   let a = localStorage.getItem("userid");
-   dispatch(handleuserdelete(a));
-
-   
-  }
 
 useEffect(()=>{
   handletotal()
@@ -40,13 +29,12 @@ useEffect(()=>{
 })
 
 
-
   return (
     
         // <SimpleGrid   columns={[2, null, 2]} w='100%' spacing='40px'>
            <Flex justifyContent={"space-between"}  mt={8}>
             <Box width={"45%"}>
-              <Button variant={"outline"} float={"left"} onClick={() => handledelete()}>
+              <Button variant={"outline"} float={"left"} onClick={() => {}}>
                 Empty Basket
               </Button>
             </Box>
