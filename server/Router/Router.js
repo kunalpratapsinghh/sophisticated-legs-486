@@ -672,7 +672,7 @@ router.get("/cart/:userid",async (req,res)=>{
 
 
     try{
-        let a = await cart_model.find({user_id:userid});
+        let a = await cart_model.find({user_id:userid});  
        return res.status(200).send(a);
 
     }catch(e){
@@ -683,7 +683,7 @@ router.get("/cart/:userid",async (req,res)=>{
 });
 //delete from cart;
 router.delete("/cart/:productid",async(req,res)=>{
-  let {productid}= req.params.productid;
+  let {productid}= req.params;
 
   try{
     await cart_model.deleteOne({product_id:productid})
@@ -693,6 +693,44 @@ router.delete("/cart/:productid",async(req,res)=>{
 
   }
 })
+
+
+//////////////////////////////////edit cart page //////////////////
+// router.post("/cart/:userid",async(req,res)=>{
+//   let {userid} = req.params;
+//   console.log("req.params",req.params);
+//   let {product_id,op} = req.body;
+
+  
+  
+  
+//   try{
+      
+
+//       if(op=='add'){
+//           let a = await cart_model.findOne({product_id:product_id},{user_id:userid})
+//           await cart_model.updateOne({product_id:product_id},{$set:{count:Number(a.count)+1}})
+//           return res.status(201).send({message:"successfull"});
+//       }
+//       let a = await cart_model.findOne({product_id:product_id},{user_id:userid})
+//       if(a.count>1){
+          
+//           await cart_model.updateOne({product_id:product_id},{$set:{count:Number(a.count)-1}})
+//           return res.status(201).send("successfull");
+//       }else if(a.count==1){
+//         await cart_model.deleteOne({product_id:product_id});
+//       }
+//       return res.status(200).send({message:"removed from cart"});
+      
+      
+      
+      
+
+//   }catch(e){
+//       res.status(400).send({message:"something went wrong"})
+
+//   }
+// })
 
 
 
@@ -734,7 +772,7 @@ router.post("/cart/:userid",async(req,res)=>{
     
     
     try{
-        let item = await cart_model.findOne({product_id:product_id})
+        let item = await cart_model.findOne({product_id:product_id},{user_id:userid})
         console.log(item);
         if(!item){
           
@@ -748,8 +786,8 @@ router.post("/cart/:userid",async(req,res)=>{
         }
 
         if(op=='add'){
-            let a = await cart_model.findOne({product_id:product_id})
-            await cart_model.updateOne({product_id:product_id},{$set:{count:Number(a.count)+1}})
+            let a = await cart_model.findOne({product_id:product_id},{user_id:userid})
+            await cart_model.agrre({product_id:product_id},{$set:{count:Number(a.count)+1}})
             return res.status(201).send("successfull");
         }
         let a = await cart_model.findOne({product_id:product_id})
@@ -771,6 +809,8 @@ router.post("/cart/:userid",async(req,res)=>{
 
     }
 })
+
+
 
 
 
