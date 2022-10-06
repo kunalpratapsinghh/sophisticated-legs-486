@@ -5,20 +5,20 @@ import {useDispatch,useSelector} from "react-redux";
 import {HStack,Stack,Container,Box, Button, Text,Divider, Center} from "@chakra-ui/react"
 import Discription from '../../component/Discription';
 import Display from '../../component/Display';
-import {getcart} from "./Cart_action"
+import {getcart,handledelete,deccart} from "./Cart_action"
 import { useEffect } from 'react';
 
-let data=[
-  {itemcateogory:"Food&Grains",item:"Wheat Floor",price:"899",quantity:2},
-  {itemcateogory:"Brivarage",item:"Icecream",price:"500",quantity:1}
-]
+// let data=[
+//   {itemcateogory:"Food&Grains",item:"Wheat Floor",price:"899",quantity:2},
+//   {itemcateogory:"Brivarage",item:"Icecream",price:"500",quantity:1}
+// ]
 
 const Cart = () => {
-  let {cart,userid} = useSelector((state)=>state.cart);
+  let {cart} = useSelector((state)=>state.cart);
   let dispatch = useDispatch();
-
+  
 console.log(cart); 
- let a = localStorage.getItem("userid");
+ let a = localStorage.getItem("userid"); 
   useEffect(()=>{
     dispatch(getcart(a));
   },[])
@@ -35,7 +35,7 @@ console.log(cart);
           
         <Divider orientation='horizontal' />
         <Box w='100%' >
-          <Display />
+          <Display  />
         </Box>
         <Box w='100%' >
            <Discription   />
