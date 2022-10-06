@@ -665,7 +665,7 @@ router.post("/email", async (req, res) => {
       res.send({ otp:otp} );
     }
   });
-
+ 
 ////////////////cart get
 router.get("/cart/:userid",async (req,res)=>{
     let {userid} = req.params;
@@ -682,55 +682,72 @@ router.get("/cart/:userid",async (req,res)=>{
 
 });
 //delete from cart;
-router.delete("/cart/:productid",async(req,res)=>{
-  let {productid}= req.params;
-
+router.post("/cart/:userid",async(req,res)=>{
+  let {userid}= req.params;
+  let {product_id} = req.body;
+   console.log("delete",userid,product_id)
   try{
-    await cart_model.deleteOne({product_id:productid})
+    await cart_model.deleteOne({$and:[{product_id:product_id},{user_id:userid}]})
+    console.log("success");
     res.status(200).send("deleted successfully")
   }catch(e){
     res.send("something went wrong");
 
   }
 })
+//////////////////////////cart user delete ////////////////////////
 
+router.delete("/cartuserdelete/:userid",async(req,res)=>{
+  let {userid}= req.params;
+
+  try{
+    await cart_model.deleteOne({user_id:userid});
+
+   return res.status(201).send({message:"user deleted successfull"})
+    
+  }catch(e){
+   return res.send({message:"something went wrong"})
+  } 
+})
 
 //////////////////////////////////edit cart page //////////////////
-// router.post("/cart/:userid",async(req,res)=>{
-//   let {userid} = req.params;
-//   console.log("req.params",req.params);
-//   let {product_id,op} = req.body;
+router.post("/cartchange/:userid",async(req,res)=>{
+  let {userid} = req.params;
+  console.log("req.params",req.params);
+  let {product_id,op} = req.body;
 
   
   
   
-//   try{
+  try{
       
 
-//       if(op=='add'){
-//           let a = await cart_model.findOne({product_id:product_id},{user_id:userid})
-//           await cart_model.updateOne({product_id:product_id},{$set:{count:Number(a.count)+1}})
-//           return res.status(201).send({message:"successfull"});
-//       }
-//       let a = await cart_model.findOne({product_id:product_id},{user_id:userid})
-//       if(a.count>1){
+      if(op=='add'){
+          let a = await cart_model.findOne({$and:[{product_id:product_id},{user_id:userid}]})
+          await cart_model.updateOne({$and:[{product_id:product_id},{user_id:userid}]},{$set:{count:Number(a.count)+1}})
+          return res.status(201).send({message:"successfull"});
+      }
+      let a = await cart_model.findOne({$and:[{product_id:product_id},{user_id:userid}]})
+      if(a.count>1){
           
-//           await cart_model.updateOne({product_id:product_id},{$set:{count:Number(a.count)-1}})
-//           return res.status(201).send("successfull");
-//       }else if(a.count==1){
-//         await cart_model.deleteOne({product_id:product_id});
-//       }
-//       return res.status(200).send({message:"removed from cart"});
+          await cart_model.updateOne({$and:[{product_id:product_id},{user_id:userid}]},{$set:{count:Number(a.count)-1}})
+          return res.status(201).send("successfull");
+      }else if(a.count==1){
+        await cart_model.deleteOne({$and:[{product_id:product_id},{user_id:userid}]});
+        return res.status(200).send({message:"removed from cart"});
+      }
+      return res.status(401).send({message:"element not found"})
+      
       
       
       
       
 
-//   }catch(e){
-//       res.status(400).send({message:"something went wrong"})
+  }catch(e){
+      res.status(400).send({message:"something went wrong"}) 
 
-//   }
-// })
+  }
+})
 
 
 
@@ -740,7 +757,7 @@ router.delete("/cart/:productid",async(req,res)=>{
 
 ///////////////////////////// product page//////////////////////////////
 
-//get
+//get products//////////////////
 
 router.get("/product",async(req,res)=>{
     try{
@@ -751,6 +768,8 @@ router.get("/product",async(req,res)=>{
         res.status(400).send(e.message)
     }
 })
+
+//////////////////////get product by id ///////////////////////
 
 router.get("/product/:id",async(req,res)=>{
     try{
@@ -763,7 +782,7 @@ router.get("/product/:id",async(req,res)=>{
 })
 ////post
 
-router.post("/cart/:userid",async(req,res)=>{
+router.post("/cart/product/:userid",async(req,res)=>{
     let {userid} = req.params;
     console.log("req.params",req.params);
     let {product_id,Title,Brand,Image_url,Category,Price,op} = req.body;
@@ -772,7 +791,8 @@ router.post("/cart/:userid",async(req,res)=>{
     
     
     try{
-        let item = await cart_model.findOne({product_id:product_id},{user_id:userid})
+      
+        let item = await cart_model.findOne({$and:[{product_id:product_id},{user_id:userid}]})
         console.log(item);
         if(!item){
           
@@ -786,17 +806,17 @@ router.post("/cart/:userid",async(req,res)=>{
         }
 
         if(op=='add'){
-            let a = await cart_model.findOne({product_id:product_id},{user_id:userid})
-            await cart_model.agrre({product_id:product_id},{$set:{count:Number(a.count)+1}})
+            let a = await cart_model.findOne({$and:[{product_id:product_id},{user_id:userid}]})
+            await cart_model.updateOne({$and:[{product_id:product_id},{user_id:userid}]},{$set:{count:Number(a.count)+1}})
             return res.status(201).send("successfull");
         }
-        let a = await cart_model.findOne({product_id:product_id})
+        let a = await cart_model.findOne({$and:[{product_id:product_id},{user_id:userid}]})
         if(a.count>1){
             
-            await cart_model.updateOne({product_id:product_id},{$set:{count:Number(a.count)-1}})
+            await cart_model.updateOne({$and:[{product_id:product_id},{user_id:userid}]},{$set:{count:Number(a.count)-1}})
             return res.status(201).send("successfull");
         }else if(a.count==1){
-          await cart_model.deleteOne({product_id:product_id});
+          await cart_model.deleteOne({$and:[{product_id:product_id},{user_id:userid}]}); 
         }
         return res.status(200).send({message:"removed from cart"});
         
