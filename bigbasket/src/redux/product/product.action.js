@@ -1,5 +1,6 @@
 import axios from "axios"
-import { GET_PRODUCT_ERROR, GET_PRODUCT_LOADING, GET_PRODUCT_SUCCESS } from "./product.action.type"
+import { GET_PRODUCT_ERROR, GET_PRODUCT_LOADING, GET_PRODUCT_SUCCESS, Update_Brand } from "./product.action.type"
+import { getcart } from "../../pages/cart/Cart_action"
 
 export const fetchData = (filter) => (dispatch) => {
     dispatch({ type: GET_PRODUCT_LOADING })
@@ -14,7 +15,7 @@ export const fetchData = (filter) => (dispatch) => {
 
 export const addtoCart = (el,userid) => async(dispatch) => {
     console.log(userid,"userid");
-    axios.post(`http://localhost:8080/cart/${userid}`,{
+    await axios.post(`http://localhost:8080/cart/product/${userid}`,{
         
         product_id:el._id,
         Title:el.Title,
@@ -24,13 +25,16 @@ export const addtoCart = (el,userid) => async(dispatch) => {
         Category:el.Category,
         op:el.op
     }).then((r)=>{
-        console.log(r.message);
+        console.log(r);
 
     }).catch((e)=>{
         console.log(e.message)
     })
+    dispatch(getcart(userid))
+
 
 }
+
 
 
 export const updateQty = (count,id) => (dispatch) => {
