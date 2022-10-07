@@ -12,7 +12,6 @@ import {
   useDisclosure,
   Heading,
   Link,
-  Stack,
 } from "@chakra-ui/react";
 import { PhoneIcon, SearchIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { ImLocation2 } from "react-icons/im";
@@ -46,7 +45,6 @@ export const Topnavbar = () => {
   // const [show1, setShow1] = useState(true);
   // const [state, setstate] = useState(false);
   let [showmodal,setShowmodal] = useState(false);
-  const {cart} = useSelector((state)=>state.cart)
 
 
   const navigate = useNavigate();
@@ -153,7 +151,6 @@ console.log(name,"topnavbar")
                 <Flex
                   width="16%"
                   // justifyContent={"space-between"}
-                  _hover={{cursor:"pointer"}}
                   bg={" #e8e8e8"}
                   height={"60px"}
                   onClick={() => {
@@ -161,32 +158,22 @@ console.log(name,"topnavbar")
                   }}
                 >
                   <Flex
-                  alignItems={'center'}
-                  justifyContent='center'
-                  ml='0.5rem'
-                
-                  >
-                      <Text>{cart.length}</Text>
-                    </Flex>
-                  <Flex
-                    ml={"0.5rem"}
+                    ml={"20px"}
                     mr="1rem"
                     alignItems={"center"}
                     justifyContent={"center"}
                   >
-                   
-                      
-                      <BsBasket3  size={"15px"} />
-                    
-                    
+                    <BsBasket3 size={"20px"} />
                   </Flex>
                   <Flex
                     alignItems={"center"}
                     justifyContent={"center"}
                     flexDirection={"column"}
                   >
-                    <Text fontSize={"12px"} >My Basket</Text>
-                    
+                    <Text fontSize={"12px"}>My Basket</Text>
+                    <Flex>
+                      {/* <CartLength /> <Text ml={2}>Items</Text> */}
+                    </Flex>
                   </Flex>
                 </Flex>
               </Flex>

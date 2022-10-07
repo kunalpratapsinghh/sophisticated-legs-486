@@ -3,7 +3,7 @@ import {Stack,Container,Th,Button,Td,Tbody,Thead,TableContainer,Tr,Table} from "
 import { CloseIcon } from "@chakra-ui/icons";
 import {useDispatch,useSelector} from "react-redux"
 import { useEffect } from 'react';
-import {getcart,deccart,handledelete} from "../pages/cart/Cart_action";
+import {getcart} from "../pages/cart/Cart_action";
 import {useNavigate} from "react-router-dom"
 
 
@@ -13,18 +13,11 @@ const Display = () => {
     let [count,setCount] = useState(0);
     let saved=0;
     let navigate = useNavigate();
-    let [change,setChange] = useState(false);
     
 
-    let handleDec=(el,op)=>{ 
-      dispatch(deccart(el,op));
-     
-    
-    } 
-    let handleDelete=(el)=>{
-      dispatch(handledelete(el));
-      
-    }
+let handleDelete=()=>{
+
+}
 
  
 useEffect(()=>{
@@ -81,7 +74,7 @@ useEffect(()=>{
                         <Button
                           variant={"outline"}
                           
-                          onClick={() => handleDec(e,"subs")}
+                          onClick={() => setCount(count - 1)}
                         >
                           -
                         </Button>
@@ -91,15 +84,14 @@ useEffect(()=>{
                         <Button
                           variant={"outline"}
                           
-                          onClick={() =>handleDec(e,"add")}
+                          onClick={() =>"d"}
                         >
                           +
                         </Button>
                       </Td>
-                      <Td  >Rs {e.Price}</Td>
-                      <Td  >
-
-                        <CloseIcon _hover={{cursor:"pointer"}} onClick={() => handleDelete(e)} />
+                      <Td  >Rs {Math.floor(e.Price - (10 * e.Price) / 100)}</Td>
+                      <Td>
+                        <CloseIcon onClick={() => handleDelete(e._id)} />
                       </Td>
                       <Td>
                         {" "}
