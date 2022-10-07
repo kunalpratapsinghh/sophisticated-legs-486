@@ -29,7 +29,7 @@ router.post("/signup",async(req,res)=>{
      return res.status(201).send({message:"created"});
 
   }catch(e){
-    return res.send(e)
+    return res.send(e.message)
 
   }
   
@@ -62,8 +62,8 @@ router.post("/email", async (req, res) => {
       host:"smtp.gmail.com",
       
       auth: { 
-        user: "bigbasketclone8@gmail.com",   //"bigbasketclone265@gmail.com",
-        pass:"icfedlmipbzfpcud", //"loobtgrxwqlecrlo"
+        user:   "bigbasketclone265@gmail.com", //"bigbasketclone8@gmail.com",
+        pass: "loobtgrxwqlecrlo"  //"icfedlmipbzfpcud",
       },
     });
     let otp = Math.floor(100000 + Math.random() * 900000);
@@ -661,7 +661,7 @@ router.post("/email", async (req, res) => {
       console.log(user1,"user1 from email")
       return res.send({ email: user1.email, otp: otp, userid: user1._id });
     } else {
-      // const token = jwt.sign({ otp }, "secret");
+      // const token = jwt.sign({ otp }, "secret"); 
       res.send({ otp:otp} );
     }
   });
