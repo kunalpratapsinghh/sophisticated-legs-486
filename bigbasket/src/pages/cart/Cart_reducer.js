@@ -24,6 +24,7 @@ export const Cart_reducer =(state=intialstate,{type,payload})=>{
         case cart_add_successfull:{
             return {...state,loading:false,error:false,cart:payload}
         }
+        
         case cart_error:{
             return {...state,loading:false,error:true}
         }

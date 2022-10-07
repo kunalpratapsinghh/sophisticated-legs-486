@@ -6,10 +6,14 @@ import Homepage from './homepage/Homepage'
 import Products from './Products/Products'
 
 
+
 const Router = () => {
+  const url= window.location.href
   return (
     
-    <Routes>
+    
+      
+      <Routes>
         
         <Route path={'/'} element={<Homepage />} />
 
@@ -19,6 +23,9 @@ const Router = () => {
         <Route path={'/checkout'} element={<Checkout />} />
         
     </Routes>
+  
+    
+    
   )
 }
 

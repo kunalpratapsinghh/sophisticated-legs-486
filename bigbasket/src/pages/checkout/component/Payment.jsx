@@ -16,9 +16,24 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
+import { useState,useRef } from "react";
 
 const Address = () => {
+
   const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: false });
+  let [strike,setStrike] = useState(null);
+  let [card,setCard] = useState("");
+  let count = useRef(1)
+   
+  let handlechange = (e)=>{
+    setStrike(false);
+    console.log(e.target.value);
+    setCard(e.target.value);
+    count.current=count.current+1
+    count.current==16&&setStrike(true);
+  }
+  
+
   return (
     <Stack mt="-5px" border="1px solid grey">
       <HStack p={"20px"}>
@@ -44,7 +59,7 @@ const Address = () => {
           <GridItem alignItems="center">
             <Grid textAlign={"left"} alignItems="center">
               <GridItem
-                border={"1px solid grey"}
+                border={"1px solid grey"} 
                 display="flex"
                 alignItems={"center"}
                 h="50px"
@@ -91,7 +106,7 @@ const Address = () => {
               </GridItem>
             </Grid>
           </GridItem>
-          <GridItem border={"1px solid red"}>
+          <GridItem >
             <Text fontSize="lg" textAlign={"left"} p={"0px 20px"}>
               Add Card / Debit Card
             </Text>
@@ -103,11 +118,15 @@ const Address = () => {
             >
               <GridItem>
                 <Flex direction={"column"}>
-                  <Text>Enter Card Number</Text>
+                  <Text  >Enter Card Number</Text>
                   <Input
                     size={"xs"}
                     w="100%"
                     placeholder="Enter card Number"
+                    borderColor={strike==true ? "red":"green"}
+                    onChange={handlechange}
+
+                   
                   ></Input>
                 </Flex>
               </GridItem>
@@ -115,7 +134,7 @@ const Address = () => {
               <GridItem>
                 <Flex direction={"column"}>
                   <Text>Valid thru</Text>
-                  <Input size={"xs"} w="100%" placeholder="MM/YY"></Input>
+                  <Input size={"xs"} w="100%"  placeholder="MM/YY"></Input>
                 </Flex>
               </GridItem>
               <GridItem>
@@ -138,7 +157,7 @@ const Address = () => {
                 </Checkbox>
               </Flex>
               <Box></Box>
-              <Box rowSpan={2}>
+              <Box rowSpan={2}> 
                 <Button
                   w={"80%"}
                   m="auto"
