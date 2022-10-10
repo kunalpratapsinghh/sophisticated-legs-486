@@ -6,6 +6,9 @@ const cart_model = require("../Schema/cart_schema");
 const product_model = require("../Schema/product_schema");
 const user_model = require("../Schema/user.schema");
 const nodemailer = require("nodemailer")
+require('dotenv').config();
+const pass = process.env.pass;
+console.log(pass);
 
 
 app.use(express.json());
@@ -15,7 +18,7 @@ router.get("/",(req,res)=>{
     res.send("Hello")
 })
 
-router.get("/checkout",(req,res)=>{
+router.get("/checkout",(req,res)=>{ 
     res.send("Hello")
 })
 
@@ -63,7 +66,7 @@ router.post("/email", async (req, res) => {
       
       auth: { 
         user:    "bigbasketclone265@gmail.com", //"bigbasketclone8@gmail.com"
-         pass: "loobtgrxwqlecrlo",                  //"icfedlmipbzfpcud"
+         pass: pass,                  //"icfedlmipbzfpcud"
       },
     });
     let otp = Math.floor(100000 + Math.random() * 900000);
