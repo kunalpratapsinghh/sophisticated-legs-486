@@ -2,16 +2,17 @@
 <a href="https://bigbasketclonemasai.netlify.app/">Live Site</a>
 <hr>
 <p>This is a working clone of the Bigbasket website, this project has been done in order to learn the basic working of a website by implementing HTML5, CSS3, JavaScript, React. Working on this project helps to learn a lot of new things that goes into building a website. This is our collaborative project under the guidance of MASAI Team to facilitate the full stack web development curriculum.</p>
-<h2>This is a collaborative Project from Masai School in the Construct Week. We are 5 members of the team:</h2>
+
+
 ## 🔗 Team Members
 
-    1.    Shashank kumar
-[![github](https://img.shields.io/badge/my_github-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/shashankkumarP)
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shashank-kumar-83008122b/)
-    
-    2. Kunal
+    1. Kunal
 [![github](https://img.shields.io/badge/my_github-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/kunalpratapsinghh)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com)
+    
+    2.    Shashank kumar
+[![github](https://img.shields.io/badge/my_github-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/shashankkumarP)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shashank-kumar-83008122b/)
     
     3. Ashwini Perewar
 [![github](https://img.shields.io/badge/my_github-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/AshwiniPerewar)
