@@ -1,21 +1,23 @@
 const express=require("express");
+const mongoose=require("mongoose");
+require("dotenv").config();
+let MongoUrl = process.env.MongoUrl; 
+console.log(MongoUrl) 
+
 const cors = require('cors');
 const router = require("./Router/Router");
 const connection = require("./db"); 
 const app=express();
-require('dotenv').config();
-const port = process.env.port;
 
-app.use(cors({
-    origin: '*'
-}));
+
+app.use(cors());
 
 app.use(express.json())
 app.use("/",router) 
 
 app.listen(8080,async(req,res)=>{ 
     try {
-        await connection
+        await mongoose.connect(`${MongoUrl}`)
         console.log("Connected")
     } catch (error) {
         console.log("Connection Error")
