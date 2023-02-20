@@ -5,6 +5,7 @@ export const loginAPI = (data) => async (dispatch) => {
   axios
     .post("https://bigbasketbackend.herokuapp.com/getemail", {
       email: data.toString(),
+
     })
     .then((r) => {
       dispatch({ type: "email", payload: r.data });

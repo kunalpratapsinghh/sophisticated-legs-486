@@ -65,7 +65,7 @@ router.post("/email", async (req, res) => {
       host:"smtp.gmail.com",
       
       auth: { 
-        user:    "bigbasketclone265@gmail.com", //"bigbasketclone8@gmail.com"
+        user:    "bigbasketclone265@gmail.com", //"bigbasketclone8@gmail.com" 
          pass: pass,                  //"icfedlmipbzfpcud"
       },
     });
